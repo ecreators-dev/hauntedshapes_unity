@@ -62,10 +62,10 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   focusMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   focusDistance:
     m_OverrideState: 1
     m_Value: 10
@@ -83,22 +83,22 @@ MonoBehaviour:
     m_Value: 10
   farFocusEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 50
   m_NearSampleCount:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 8
   m_NearMaxBlur:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 7
   m_FarSampleCount:
     m_OverrideState: 1
     m_Value: 7
   m_FarMaxBlur:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 13
   m_Resolution:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   m_HighQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0
   maximumVelocity:
     m_OverrideState: 1
     m_Value: 200
@@ -858,7 +858,7 @@ MonoBehaviour:
   active: 1
   cameraClusterRange:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 5
 --- !u!114 &-2408671643631660318
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -877,7 +877,7 @@ MonoBehaviour:
     m_Value: 1
   enabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   colorMode:
     m_OverrideState: 1
     m_Value: 1
@@ -910,7 +910,7 @@ MonoBehaviour:
     m_Value: 400
   enableVolumetricFog:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   albedo:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -1503,7 +1503,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.1
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -1699,13 +1699,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -16.2
 --- !u!114 &3764416213569822117
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1749,7 +1749,7 @@ MonoBehaviour:
   active: 1
   enable:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   layerMask:
     m_OverrideState: 1
     m_Value:
@@ -1757,7 +1757,7 @@ MonoBehaviour:
       m_Bits: 4294967295
   maxDepth:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 2
   rayLength:
     m_OverrideState: 1
     m_Value: 10
@@ -2005,7 +2005,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 13
   compensation:
     m_OverrideState: 1
     m_Value: 0
@@ -2095,7 +2095,7 @@ MonoBehaviour:
       m_RotationOrder: 4
   adaptationMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   adaptationSpeedDarkToLight:
     m_OverrideState: 1
     m_Value: 3
@@ -2156,7 +2156,7 @@ MonoBehaviour:
     m_Value: 1
   extendCameraCulling:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   directionalShadowRayLength:
     m_OverrideState: 1
     m_Value: 1000
@@ -2195,19 +2195,34 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 0
   maximumSamples:
     m_OverrideState: 1
-    m_Value: 256
+    m_Value: 4096
   minimumDepth:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 7
   maximumDepth:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 7
   maximumIntensity:
     m_OverrideState: 1
     m_Value: 10
+  denoising:
+    m_OverrideState: 1
+    m_Value: 0
+  useAOVs:
+    m_OverrideState: 1
+    m_Value: 1
+  temporal:
+    m_OverrideState: 1
+    m_Value: 0
+  separateVolumetrics:
+    m_OverrideState: 1
+    m_Value: 0
+  asyncDenoising:
+    m_OverrideState: 1
+    m_Value: 1
   skyImportanceSampling:
     m_OverrideState: 1
     m_Value: 0
@@ -2216,7 +2231,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 0, w: 0}
   seedMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   customSeed:
     m_OverrideState: 1
     m_Value: 0
@@ -2579,7 +2594,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   useFullACES:
     m_OverrideState: 1
     m_Value: 0
@@ -2621,7 +2636,7 @@ MonoBehaviour:
     m_Value: 0
   detectPaperWhite:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   paperWhite:
     m_OverrideState: 1
     m_Value: 300

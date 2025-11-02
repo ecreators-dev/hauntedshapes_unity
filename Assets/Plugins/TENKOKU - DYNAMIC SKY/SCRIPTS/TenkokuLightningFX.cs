@@ -159,8 +159,12 @@ namespace Tenkoku.Core
 
 		//enable lightening
 		volEnable = 0.0f;
-		if (tenkokuModule.enableSoundFX) volEnable = 1.0f;
-		if (freq <= 0.0f){
+		if (tenkokuModule.enableSoundFX)
+            {
+                volEnable = 1.0f;
+            }
+
+            if (freq <= 0.0f){
 			startLightning = false;
 		}
 
@@ -176,9 +180,11 @@ namespace Tenkoku.Core
 			useLightningSysTime = 0.0f;
 
 			lightningFreqTime = lightningFreqTime + (_deltaTime/useLightningFrequency);
-			if (lightningFreqTime >= 1.0f) startLightning = true;
-
-		} else {
+			if (lightningFreqTime >= 1.0f)
+                {
+                    startLightning = true;
+                }
+            } else {
 
 			//init settings
 			if (useLightningSysTime == 0.0f){
@@ -188,8 +194,12 @@ namespace Tenkoku.Core
 				lightningSysTime = lightningRand.Next(0.0f,1.4f);
 				lightningSysTime = Mathf.Clamp(lightningSysTime,0.2f,1.0f);
 				lightningUseLight = false;
-				if (lightningRand.Next(0.0f,1.5f + freq) >= 1.0f) lightningUseLight = true;
-				useLightningRandPos = lightningRand.Next(0.0f-lightningRandomRange,lightningRandomRange);
+				if (lightningRand.Next(0.0f,1.5f + freq) >= 1.0f)
+                    {
+                        lightningUseLight = true;
+                    }
+
+                    useLightningRandPos = lightningRand.Next(0.0f-lightningRandomRange,lightningRandomRange);
 
 				boltTime = 1.0f;
 				lightningFreqTime = 0.0f;
@@ -200,12 +210,19 @@ namespace Tenkoku.Core
 			//timers
 			useLightningSysTime = useLightningSysTime + _deltaTime;
 			lightningTime = lightningTime + (_deltaTime * lightningSpeed);
-			if (lightningTime <= 1.0f) lightningUseInt = Mathf.SmoothStep(lightningUseInt,lightningIntensity,lightningTime);
-			if (lightningTime > 1.0f) lightningUseInt = Mathf.SmoothStep(lightningUseInt,0.2f,lightningTime-1.0f);
-			
+			if (lightningTime <= 1.0f)
+                {
+                    lightningUseInt = Mathf.SmoothStep(lightningUseInt,lightningIntensity,lightningTime);
+                }
 
-			//reset
-			if (useLightningSysTime >= lightningSysTime && lightningTime > 2.0f){
+                if (lightningTime > 1.0f)
+                {
+                    lightningUseInt = Mathf.SmoothStep(lightningUseInt,0.2f,lightningTime-1.0f);
+                }
+
+
+                //reset
+                if (useLightningSysTime >= lightningSysTime && lightningTime > 2.0f){
 				startLightning = false;
 				startThunder = false;
 			}
@@ -350,12 +367,19 @@ namespace Tenkoku.Core
 
 		//select audio object from pool
 		currAudio += 1;
-		if (currAudio >= thunderObjects.Length) currAudio = 0;
-		if (thunderObjects[currAudio] != null) thunderObject = thunderObjects[currAudio].GetComponent<AudioSource>() as AudioSource;
+		if (currAudio >= thunderObjects.Length)
+            {
+                currAudio = 0;
+            }
+
+            if (thunderObjects[currAudio] != null)
+            {
+                thunderObject = thunderObjects[currAudio].GetComponent<AudioSource>() as AudioSource;
+            }
 
 
-		//Handle Audio effects
-		if (thunderObject != null){
+            //Handle Audio effects
+            if (thunderObject != null){
 
 			thunderDelay = 0f;
 			thunderVol = 1f;

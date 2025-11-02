@@ -295,14 +295,37 @@ namespace Tenkoku.Core
 		
 		float returnValue = 0f;
 
-		if (returnElement == 1) returnValue = lN;
-		if (returnElement == 2) returnValue = li;
-		if (returnElement == 3) returnValue = lw;
-		if (returnElement == 4) returnValue = la;
-		if (returnElement == 5) returnValue = le;
-		if (returnElement == 6) returnValue = lM;
+		if (returnElement == 1)
+            {
+                returnValue = lN;
+            }
 
-		return returnValue;
+            if (returnElement == 2)
+            {
+                returnValue = li;
+            }
+
+            if (returnElement == 3)
+            {
+                returnValue = lw;
+            }
+
+            if (returnElement == 4)
+            {
+                returnValue = la;
+            }
+
+            if (returnElement == 5)
+            {
+                returnValue = le;
+            }
+
+            if (returnElement == 6)
+            {
+                returnValue = lM;
+            }
+
+            return returnValue;
 	}
 
 
@@ -627,8 +650,12 @@ namespace Tenkoku.Core
 			lonecl += lon_corr;
 			lonsun += lon_corr;
 			ur = r;
-			if (checkElement == 3) ur = 1.0f;
-		    xh = ur * Cosd(lonecl) * Cosd(latecl);
+			if (checkElement == 3)
+                {
+                    ur = 1.0f;
+                }
+
+                xh = ur * Cosd(lonecl) * Cosd(latecl);
 		    yh = ur * Sind(lonecl) * Cosd(latecl);
 		    zh = ur * Sind(latecl);
 

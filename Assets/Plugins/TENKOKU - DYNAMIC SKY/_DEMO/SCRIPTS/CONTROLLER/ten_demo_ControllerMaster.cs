@@ -40,13 +40,19 @@ public class ten_demo_ControllerMaster : MonoBehaviour {
 		
 		//set controller to none
 		if (currentControllerType == Ten_Demo_ControllerType.none){
-			if (cameraController != null) cameraController.enabled = true;
-		}
+			if (cameraController != null)
+            {
+                cameraController.enabled = true;
+            }
+        }
 
 		//set controller to camera
 		if (currentControllerType == Ten_Demo_ControllerType.camera){
-			if (cameraController != null) cameraController.enabled = true;
-		}
+			if (cameraController != null)
+            {
+                cameraController.enabled = true;
+            }
+        }
 
 		//reset
 		if (resetController){

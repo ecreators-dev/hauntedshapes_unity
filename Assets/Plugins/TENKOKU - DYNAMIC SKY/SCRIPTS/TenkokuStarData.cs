@@ -86,7 +86,12 @@ public class TenkokuStarData : ScriptableObject {
 					h = float.Parse(workData.Substring(1,2));
 					m = float.Parse(workData.Substring(4,2));
 					s = float.Parse(workData.Substring(7,5));
-					if (mod=="-") h = 0f - h;;
+					if (mod=="-")
+                    {
+                        h = 0f - h;
+                    }
+
+                    ;
 					starElements[cnvX].decH = h;
 					starElements[cnvX].decM = m;
 					starElements[cnvX].decS = s;
@@ -95,16 +100,43 @@ public class TenkokuStarData : ScriptableObject {
 					//set star colors
 					workData = starDataArray[cnvX].Substring(67,8);
 					starColor = workData.Substring(1,1);
-					if (starColor == "O") starElements[cnvX].color = 0;
-					if (starColor == "B") starElements[cnvX].color = 1;
-					if (starColor == "A") starElements[cnvX].color = 2;
-					if (starColor == "F") starElements[cnvX].color = 3;
-					if (starColor == "G") starElements[cnvX].color = 4;
-					if (starColor == "K") starElements[cnvX].color = 5;
-					if (starColor == "M") starElements[cnvX].color = 6;
+					if (starColor == "O")
+                    {
+                        starElements[cnvX].color = 0;
+                    }
 
-					//set star magnitude
-					starElements[cnvX].factor = float.Parse(workData.Substring(2,1));
+                    if (starColor == "B")
+                    {
+                        starElements[cnvX].color = 1;
+                    }
+
+                    if (starColor == "A")
+                    {
+                        starElements[cnvX].color = 2;
+                    }
+
+                    if (starColor == "F")
+                    {
+                        starElements[cnvX].color = 3;
+                    }
+
+                    if (starColor == "G")
+                    {
+                        starElements[cnvX].color = 4;
+                    }
+
+                    if (starColor == "K")
+                    {
+                        starElements[cnvX].color = 5;
+                    }
+
+                    if (starColor == "M")
+                    {
+                        starElements[cnvX].color = 6;
+                    }
+
+                    //set star magnitude
+                    starElements[cnvX].factor = float.Parse(workData.Substring(2,1));
 
 					//calculate magnitude
 					workData = starDataArray[cnvX].Substring(53,4);

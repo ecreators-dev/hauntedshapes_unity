@@ -87,7 +87,9 @@ namespace Game
         private List<InventoryEntry> FindFillableSlots(InventoryAsset item, int slotSizeType, int inventoryItemSize)
         {
             if (item == null)
+            {
                 return new List<InventoryEntry>();
+            }
 
             List<InventoryEntry> free = new List<InventoryEntry>();
 
@@ -103,7 +105,9 @@ namespace Game
                     int spaceForItems = slotSizeType;
                     int itemsInSlot = entrySlot.Count * inventoryItemSize;
                     if (spaceForItems - itemsInSlot >= inventoryItemSize)
+                    {
                         free.Add(entrySlot);
+                    }
                 }
             }
 
@@ -116,7 +120,9 @@ namespace Game
         public void RemoveItem(InventoryAsset item)
         {
             if (item == null)
+            {
                 return;
+            }
 
             InventoryEntry? foundEntry = entries.FirstOrDefault(e => e.Asset == item);
             if (foundEntry != null)
@@ -158,7 +164,9 @@ namespace Game
         public void ConsumeKey(KeyId keyValue)
         {
             if (keyValue == null)
+            {
                 return;
+            }
 
             foreach (InventoryEntry slot in entries)
             {

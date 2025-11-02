@@ -18,7 +18,9 @@ namespace Game.Interaction
             foreach (IInteractiveLight light in controlledLights.Cast<IInteractiveLight>())
             {
                 if (!light.IsEnabled)
+                {
                     continue;
+                }
 
                 light.SwitchRed();
                 light.EnableDanger();
@@ -30,7 +32,9 @@ namespace Game.Interaction
             foreach (IInteractiveLight light in controlledLights.Cast<IInteractiveLight>())
             {
                 if (!light.IsEnabled)
+                {
                     continue;
+                }
 
                 light.DisableDanger();
                 light.SwitchDefaultLight();

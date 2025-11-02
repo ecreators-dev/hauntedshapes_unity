@@ -32,10 +32,14 @@ namespace Game.Audio
         private void OnValidate()
         {
             if (this.player == null)
+            {
                 Awake();
+            }
 
             if (this.player == null)
+            {
                 return;
+            }
 
             this.player.volume = volume;
         }
@@ -48,7 +52,9 @@ namespace Game.Audio
         public void Play()
         {
             if (clips == null || clips.Count == 0)
+            {
                 return;
+            }
 
             int clipIndex = Random.Range(0, clips.Count);
             AudioClip clip = clips[clipIndex];
@@ -58,7 +64,9 @@ namespace Game.Audio
         internal void SetMute(bool muted)
         {
             if (this.player == null)
+            {
                 return;
+            }
 
             this.player.mute = muted;
         }

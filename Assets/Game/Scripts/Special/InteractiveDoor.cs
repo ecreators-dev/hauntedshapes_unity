@@ -92,7 +92,9 @@ namespace Game.Interaction
         private void OpenDoor()
         {
             if (!Application.isPlaying)
+            {
                 return;
+            }
 
             openState = OpenCloseEnum.Open;
             openStateBefore = OpenCloseEnum.Close;
@@ -135,7 +137,9 @@ namespace Game.Interaction
         public void CloseDoor()
         {
             if (!Application.isPlaying)
+            {
                 return;
+            }
 
             openState = OpenCloseEnum.Close;
             openStateBefore = OpenCloseEnum.Open;
@@ -162,16 +166,24 @@ namespace Game.Interaction
         private void EnsureConsumeKey(GameActorBehaviour actor)
         {
             if (unlockCondition == null)
+            {
                 return;
+            }
 
             if (unlockCondition.KeyValue == null)
+            {
                 return;
+            }
 
             if (actor is not IPlayerActor player)
+            {
                 return;
+            }
 
             if (player.GetInventory() is not IInventorySource inventory)
+            {
                 return;
+            }
 
             inventory.ConsumeKey(unlockCondition.KeyValue);
         }
@@ -181,7 +193,9 @@ namespace Game.Interaction
             if (Application.isPlaying)
             {
                 if (IsLocked)
+                {
                     return false;
+                }
 
                 return this.GetGameController().IsConditionHit(unlockCondition, actor);
             }
@@ -192,7 +206,9 @@ namespace Game.Interaction
         public IInteractionZone GetInteractionArea()
         {
             if (triggerZone == null)
+            {
                 print("Fehlende Triggerzone");
+            }
 
             return triggerZone;
         }

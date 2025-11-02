@@ -69,9 +69,13 @@ namespace CloudSkybox
 
             NoiseTools.NoiseGeneratorBase noise;
             if (_noiseType == NoiseType.Perlin)
+            {
                 noise = new NoiseTools.PerlinNoise(_frequency, 1, _seed);
+            }
             else
+            {
                 noise = new NoiseTools.WorleyNoise(_frequency, 1, _seed);
+            }
 
             var buffer = new Color[size * size * size];
             var index = 0;

@@ -14,9 +14,14 @@ public abstract class Tenkoku_TemporalEffectBase : MonoBehaviour
         if (shader != null)
         {
             if (material == null || material.shader != shader)
+            {
                 material = new Material(shader);
+            }
+
             if (material != null)
+            {
                 material.hideFlags = HideFlags.DontSave;
+            }
         }
         else
         {
@@ -29,9 +34,13 @@ public abstract class Tenkoku_TemporalEffectBase : MonoBehaviour
         if (enabled != material.IsKeywordEnabled(name))
         {
             if (enabled)
+            {
                 material.EnableKeyword(name);
+            }
             else
+            {
                 material.DisableKeyword(name);
+            }
         }
     }
 

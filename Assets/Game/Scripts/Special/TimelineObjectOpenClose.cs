@@ -37,14 +37,19 @@ namespace Game.Interaction
         private void RunAnimation(OpenCloseEnum behaviour)
         {
             if (behaviour == this.animationTypeBefore)
+            {
                 return;
+            }
 
             this.animationTypeBefore = behaviour;
 
             // nur debug: kann gelöscht werden
 #if UNITY_EDITOR
             if (!Application.isPlaying)
+            {
                 this.timelineDirector = null;
+            }
+
             this.timelineDirector ??= new TimelinePlayer(director);
 #endif
 

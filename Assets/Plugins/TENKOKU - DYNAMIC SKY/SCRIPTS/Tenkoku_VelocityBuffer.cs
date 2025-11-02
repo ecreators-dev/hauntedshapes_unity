@@ -68,7 +68,10 @@ public class Tenkoku_VelocityBuffer : Tenkoku_TemporalEffectBase
         if (_camera.orthographic || _camera.depthTextureMode == DepthTextureMode.None || velocityMaterial == null)
         {
             if (_camera.depthTextureMode == DepthTextureMode.None)
+            {
                 _camera.depthTextureMode = DepthTextureMode.Depth;
+            }
+
             return;
         }
 
@@ -89,7 +92,9 @@ public class Tenkoku_VelocityBuffer : Tenkoku_TemporalEffectBase
         Matrix4x4 cameraVP = cameraP * cameraV;
 
         if (velocityViewMatrix == null)
+        {
             velocityViewMatrix = cameraV;
+        }
 
         RenderTexture activeRT = RenderTexture.active;
         RenderTexture.active = velocityBuffer;

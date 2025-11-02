@@ -195,30 +195,7 @@ MonoBehaviour:
       - rid: 930098154940661996
       - rid: 930098154940661997
     m_RuntimeSettings:
-      m_List:
-      - rid: 930098154940661962
-      - rid: 930098154940661963
-      - rid: 930098154940661964
-      - rid: 930098154940661965
-      - rid: 930098154940661967
-      - rid: 930098154940661968
-      - rid: 930098154940661969
-      - rid: 930098154940661970
-      - rid: 930098154940661971
-      - rid: 930098154940661975
-      - rid: 930098154940661976
-      - rid: 930098154940661979
-      - rid: 930098154940661980
-      - rid: 930098154940661982
-      - rid: 930098154940661983
-      - rid: 930098154940661986
-      - rid: 930098154940661987
-      - rid: 930098154940661989
-      - rid: 930098154940661990
-      - rid: 930098154940661991
-      - rid: 930098154940661993
-      - rid: 930098154940661994
-      - rid: 930098154940661995
+      m_List: []
   renderingLayerNames:
   - Default
   lightLayerName0: 
@@ -356,8 +333,8 @@ MonoBehaviour:
           materialQuality: 0
         m_RealtimeReflection:
           bitDatas:
-            data1: 4638910381585229
-            data2: 12898310333516513304
+            data1: 4639103663996749
+            data2: 12934340318002905112
           lodBias: 1
           lodBiasMode: 0
           lodBiasQualityLevel: 0
@@ -579,7 +556,7 @@ MonoBehaviour:
       type: {class: WaterSystemGlobalSettings, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Version: 1
-        m_EnableMaskAndCurrentWaterDecals: 0
+        m_EnableMaskAndCurrentWaterDecals: 1
     - rid: 930098154940661981
       type: {class: HDRenderPipelineEditorShaders, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:

@@ -59,12 +59,17 @@ namespace Game.Interaction
         private void EnableSwingAutomaticRandomly(bool useRandomStartWaiting)
         {
             if (!startRandom)
+            {
                 return;
+            }
 
             // random start in Sekunden
             float randomSeconds = GetRandomWait();
             if (randomRoutine != null)
+            {
                 StopCoroutine(randomRoutine);
+            }
+
             randomRoutine = StartCoroutine(StartRandom());
 
             IEnumerator StartRandom()
@@ -72,7 +77,9 @@ namespace Game.Interaction
                 while (startRandom)
                 {
                     if (useRandomStartWaiting)
+                    {
                         yield return new WaitForSecondsRealtime(randomSeconds);
+                    }
 
                     float durationSeconds = StartPushRandom();
 
@@ -154,13 +161,18 @@ namespace Game.Interaction
             targetAngle *= -1;
 
             if (routine != null)
+            {
                 StopCoroutine(routine);
+            }
+
             routine = StartCoroutine(SwingRoutine());
 
             IEnumerator SwingRoutine()
             {
                 if (JointAxis == null)
+                {
                     JointAxis = GetComponent<HingeJoint>();
+                }
 
                 JointMotor motor = JointAxis.motor;
                 motor.force = motorForce;
@@ -196,7 +208,9 @@ namespace Game.Interaction
         private void Push(float power)
         {
             if (Rigidbody == null || JointAxis == null)
+            {
                 return;
+            }
 
             // Drehimpuls um die Achse des Hinge (lokale X-Achse)
             Vector3 torque = JointAxis.transform.right * power;
@@ -207,7 +221,10 @@ namespace Game.Interaction
         {
             float angle = JointAxis.transform.localEulerAngles.x;
             if (angle > 180f)
+            {
                 angle -= 360f;
+            }
+
             return angle;
         }
     }

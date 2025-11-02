@@ -26,12 +26,16 @@ public class SplineFollow : MonoBehaviour, IGameLoadProgress
     private void Update()
     {
         if (follow == null || follow.Splines.Count == 0)
+        {
             return;
+        }
 
         // Wähle Spline anhand Index (mit Modulo bei continueMode)
         int index = Mathf.Clamp(splineSelect, 0, follow.Splines.Count - 1);
         if (continueMode)
+        {
             index = splineSelect % follow.Splines.Count;
+        }
 
         Spline selected = follow.Splines[index];
 
@@ -41,9 +45,13 @@ public class SplineFollow : MonoBehaviour, IGameLoadProgress
         if (progressOnSpline > 1f)
         {
             if (continueMode)
+            {
                 progressOnSpline %= 1f;
+            }
             else
+            {
                 progressOnSpline = 1f;
+            }
         }
 
         // Spline auswerten

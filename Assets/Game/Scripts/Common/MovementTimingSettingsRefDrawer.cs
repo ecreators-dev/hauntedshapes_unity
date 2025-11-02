@@ -27,7 +27,9 @@ public class MovementTimingSettingsRefDrawer : PropertyDrawer
         Object assigned = property.FindPropertyRelative(nameof(MovementTimingSettingsRef.asset)).objectReferenceValue;
 
         if (assigned == null)
+        {
             return LabelHeight;
+        }
 
         int anzahl_rows;
         if (editable)

@@ -25,7 +25,9 @@ namespace Game
         public void Insert(InventoryAsset item)
         {
             if (Asset != null && !Asset.IsItem(item))
+            {
                 return;
+            }
 
             Asset = item;
             Add(1);
@@ -40,7 +42,9 @@ namespace Game
         private void Add(uint count)
         {
             if (count == 0 || Asset == null)
+            {
                 return;
+            }
 
             this.Count += (int)count;
         }
@@ -48,7 +52,9 @@ namespace Game
         public void RemoveOne()
         {
             if (Asset == null || Count == 0)
+            {
                 return;
+            }
 
             Remove(1);
         }
@@ -56,7 +62,9 @@ namespace Game
         private void Remove(uint count)
         {
             if (count == 0)
+            {
                 return;
+            }
 
             if (IsEmpty)
             {
@@ -66,7 +74,9 @@ namespace Game
 
             this.Count -= (int)count;
             if (Count == 0)
+            {
                 Asset = null;
+            }
         }
 
         internal bool IsKey(KeyId keyValue) => Asset != null && Count > 0 && Asset.IsKey(keyValue);

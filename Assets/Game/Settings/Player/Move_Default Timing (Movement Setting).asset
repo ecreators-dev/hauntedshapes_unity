@@ -15,4 +15,4 @@ MonoBehaviour:
   maxTime: 1
   accelerationTime: 0.3
   decelerationTime: 0.2
-  maxSpeed: 3
+  maxSpeed: 1.5

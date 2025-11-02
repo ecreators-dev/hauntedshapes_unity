@@ -31,7 +31,9 @@ namespace Game
             get
             {
                 if (instance == null)
+                {
                     instance = FindFirstObjectByType<GameController>();
+                }
 
                 return instance ?? throw new System.Exception("Kein Controller!");
             }
@@ -59,7 +61,9 @@ namespace Game
         {
             ICrosshairSelectableObject? select = ICrosshairSelector.GetInstance().FindInSelection<InventoryObject>();
             if (select is null)
+            {
                 return;
+            }
 
             if (player.GetInventory() is IInventorySource inventory)
             {
@@ -67,7 +71,9 @@ namespace Game
 
                 InventoryAsset insert = objectToInsert.GetInventoryAsset();
                 if (insert == null)
+                {
                     throw new System.Exception($"Fehlendes Asset an {nameof(InventoryObject)}");
+                }
 
                 inventory.AddItem(insert);
             }
@@ -84,7 +90,9 @@ namespace Game
         private bool IsValidCondition(IActorBehaviour actor, InteractionConditionAsset unlockCondition)
         {
             if (unlockCondition == null)
+            {
                 return true;
+            }
 
             bool valid = true;
             if (unlockCondition.PlayerLevel > 0 && Player.Data.PlayerLevel < unlockCondition.PlayerLevel)
@@ -125,7 +133,10 @@ namespace Game
 
             (bool inRange, bool hasZone) interactive = default;
             if (select is IInteractiveObject interact)
+            {
                 interactive = IsPlayerInRange(interact, PLAYER_ID_ANY);
+            }
+
             ICrosshairSelector.GetInstance().ShowTarget(select, !interactive.hasZone || interactive.inRange);
         }
 
@@ -223,7 +234,9 @@ namespace Game
             }
 
             if (!foundObj)
+            {
                 Trace.TraceWarning("Keinen Empfänger gefunden");
+            }
         }
 
 
@@ -245,7 +258,9 @@ namespace Game
             }
 
             if (!foundObj)
+            {
                 Trace.TraceWarning("Keinen Empfänger gefunden");
+            }
         }
     }
 }

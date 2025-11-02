@@ -67,12 +67,17 @@ public class ten_demo_ControllerFreeCamera : MonoBehaviour {
 			//GET MOUSE MOVEMENT
 			MouseRotationDistance = IC.inputMouseX;
 			MouseVerticalDistance = IC.inputMouseY;
-			if (reverseXAxis) MouseRotationDistance = -IC.inputMouseX;
-			if (reverseYAxis) MouseVerticalDistance = -IC.inputMouseY;
-			
-			
-			
-			if (isControllable){
+			if (reverseXAxis)
+            {
+                MouseRotationDistance = -IC.inputMouseX;
+            }
+
+            if (reverseYAxis)
+            {
+                MouseVerticalDistance = -IC.inputMouseY;
+            }
+
+            if (isControllable){
 
 				//---------------------------------
 				//  CAMERA POSITIONING

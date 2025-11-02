@@ -98,11 +98,14 @@ public class TenkokuModuleEditor : Editor {
 		//SET SCREEN WIDTH
 		//int setWidth = Screen.width-220;
 		int setWidth = (int)EditorGUIUtility.currentViewWidth-220;
-		if (setWidth < 120) setWidth = 120;
-		
-		
-		//TENKOKU LOGO
-		GUIContent buttonText = new GUIContent(""); 
+		if (setWidth < 120)
+        {
+            setWidth = 120;
+        }
+
+
+        //TENKOKU LOGO
+        GUIContent buttonText = new GUIContent(""); 
 		GUIStyle buttonStyle = GUIStyle.none; 
 		Rect rt = GUILayoutUtility.GetRect(buttonText, buttonStyle);
 		int margin = 15;
@@ -121,11 +124,22 @@ public class TenkokuModuleEditor : Editor {
 	    Rect linkBugRect = new Rect(rt.x+margin+165+42, rt.y+35, 65, 18);
 	    Rect linkURLRect = new Rect(rt.x+margin+165+120, rt.y+35, 100, 18);
 	    
-		if (Event.current.type == EventType.MouseUp && linkHelpRect.Contains(Event.current.mousePosition)) Application.OpenURL("http://www.tanukidigital.com/forum/");
-		if (Event.current.type == EventType.MouseUp && linkBugRect.Contains(Event.current.mousePosition)) Application.OpenURL("http://www.tanukidigital.com/forum/");
-		if (Event.current.type == EventType.MouseUp && linkURLRect.Contains(Event.current.mousePosition)) Application.OpenURL("http://www.tanukidigital.com/tenkoku/");
+		if (Event.current.type == EventType.MouseUp && linkHelpRect.Contains(Event.current.mousePosition))
+        {
+            Application.OpenURL("http://www.tanukidigital.com/forum/");
+        }
 
-		EditorGUI.LabelField(new Rect(rt.x+margin+165+30, rt.y+35, 220, 18),"|");
+        if (Event.current.type == EventType.MouseUp && linkBugRect.Contains(Event.current.mousePosition))
+        {
+            Application.OpenURL("http://www.tanukidigital.com/forum/");
+        }
+
+        if (Event.current.type == EventType.MouseUp && linkURLRect.Contains(Event.current.mousePosition))
+        {
+            Application.OpenURL("http://www.tanukidigital.com/tenkoku/");
+        }
+
+        EditorGUI.LabelField(new Rect(rt.x+margin+165+30, rt.y+35, 220, 18),"|");
 		EditorGUI.LabelField(new Rect(rt.x+margin+165+110, rt.y+35, 220, 18),"|");
 		
 		EditorGUI.LabelField(linkHelpRect,"help");
@@ -154,8 +168,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect(rt.x+margin+10, rt.y+5, 300, 20), new GUIContent("TIME AND POSITION"));
         
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showTimer = !script.showTimer;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showTimer = !script.showTimer;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
         if (script.showTimer){
         	GUI.Label(new Rect(rt.x+margin,rt.y+309,387,34), GUIContent.none, divRevTexStyle);
@@ -277,8 +295,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect (rt.x+margin+10, rt.y+5, 300, 20), new GUIContent ("CONFIGURATION"));
 
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showConfig = !script.showConfig;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showConfig = !script.showConfig;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
         if (script.showConfig){
         	GUI.Label(new Rect(rt.x+margin,rt.y+475,387,34), GUIContent.none, divRevTexStyle);
@@ -460,8 +482,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect (rt.x+margin+10, rt.y+5, 300, 20), new GUIContent ("COLOR SETTINGS"));
 
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showColors = !script.showColors;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showColors = !script.showColors;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
         if (script.showColors){
         	//EditorGUI.DrawPreviewTexture(new Rect(rt.x+margin,rt.y+425,387,34),divRevTex);
@@ -615,8 +641,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect (rt.x+margin+10, rt.y+5, 300, 20), new GUIContent ("CELESTIAL SETTINGS"));
 
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showCelSet = !script.showCelSet;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showCelSet = !script.showCelSet;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
 
         if (script.showCelSet){
@@ -815,8 +845,12 @@ public class TenkokuModuleEditor : Editor {
         //float spaceAdjust = 0.0f;
 
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showConfigAtmos = !script.showConfigAtmos;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showConfigAtmos = !script.showConfigAtmos;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
 
         //if (script.useSunRays) spaceAdjust += 40;
@@ -948,8 +982,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect (rt.x+margin+10, rt.y+5, 300, 20), new GUIContent ("WEATHER"));
         
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showConfigWeather = !script.showConfigWeather;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showConfigWeather = !script.showConfigWeather;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
 
 
@@ -1209,8 +1247,12 @@ public class TenkokuModuleEditor : Editor {
         GUI.Label (new Rect (rt.x+margin+10, rt.y+5, 300, 20), new GUIContent ("SOUND EFFECTS"));
         
         GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,0.0f);
-		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),"")) script.showIBL = !script.showIBL;
-		GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
+		if (GUI.Button(new Rect(rt.x+margin+10, rt.y+5, 370, 20),""))
+        {
+            script.showIBL = !script.showIBL;
+        }
+
+        GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b,1.0f);
 
         if (script.showIBL){
 

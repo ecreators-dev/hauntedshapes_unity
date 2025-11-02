@@ -35,28 +35,48 @@ namespace Game
 
         public static ICrosshairSelector GetInstance() => instance ??= FindFirstObjectByType<CrosshairSelectorBehaviour>();
 
+        private void Awake()
+        {
+            instance ??= this;
+        }
+
+        private void Start()
+        {
+            HideText();
+        }
+
         public void HideText()
         {
             if (textfield != null)
+            {
                 textfield.text = "";
+            }
 
             if (crossImage != null)
+            {
                 crossImage.color = unselectColor;
+            }
         }
 
         public void ShowTarget(ICrosshairSelectableObject target, bool active)
         {
             if (textfield == null || target == null)
+            {
                 return;
+            }
 
             textfield.text = target.GetText();
 
             if (crossImage != null)
             {
                 if (target.IsLocked)
+                {
                     crossImage.color = lockedColor;
+                }
                 else if (active)
+                {
                     crossImage.color = selectedColor;
+                }
                 else
                 {
                     HideText();
@@ -81,14 +101,18 @@ namespace Game
             Vector3 hitPosition = CrosshairRayCastNonBlocked(center, out GameObject surfaceCollisionObject);
 
             if (surfaceCollisionObject == null)
+            {
                 return null;
+            }
 
             // Finde das Crosshair-erlaubte-Trefferobjekt
             ICrosshairSelectableObject selected = FilterCrosshairObjectInfos<T>(surfaceCollisionObject);
 
             // wenn das kein Ziel ist
             if (selected == null || !selected.CanSelect)
+            {
                 return found;
+            }
 
             // wennes ein Interaktives Crosshair-Objekt-Ziel ist
             bool activatable = true;
@@ -104,7 +128,9 @@ namespace Game
                 }
 
                 if (!hasZone)
+                {
                     print("No Trigger Zone");
+                }
             }
 
             if (activatable)
@@ -184,14 +210,18 @@ namespace Game
             Camera cam = Camera.main;
             found = null;
             if (cam == null)
+            {
                 return Vector3.zero;
+            }
 
             Ray ray = cam.ScreenPointToRay(screenPosition);
 
             // Alle Treffer im Radius und in Reichweite
             bool hit = Physics.SphereCast(ray, radiusCrosshair, out RaycastHit hits, selectableDistance, layerMask: mask, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
             if (!hit)
+            {
                 return Vector3.zero;
+            }
 
             GameObject target = GetObject(hits);
 
@@ -199,7 +229,9 @@ namespace Game
             // nur exakt auf der sichtbaren Tür klicken bedeutet treffer!
             bool hitOther = Physics.Raycast(ray, out RaycastHit hitsOther, selectableDistance, layerMask: alleLayerMasks, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
             if (hitOther && GetObject(hitsOther) != target)
+            {
                 return Vector3.zero;
+            }
 
             Debug.DrawLine(ray.GetPoint(0), ray.GetPoint(hitsOther.distance), Color.red);
 

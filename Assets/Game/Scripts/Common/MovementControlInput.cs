@@ -37,6 +37,7 @@ namespace Game.Interaction.Input
         private bool crouching;
         private float crouchVelocityRef;
         private bool hasInitialGroundFix;
+        private bool sprinting;
 
         private void Awake()
         {
@@ -55,6 +56,27 @@ namespace Game.Interaction.Input
         {
             crouching = value.isPressed;
             print("Crouch: true/false");
+        }
+
+        public void OnSprint(InputValue value)
+        {
+            sprinting = value.isPressed;
+        }
+
+        public void OnSprint(InputAction.CallbackContext context)
+        {
+            if (context.performed) // Taste wurde gedrückt
+            {
+                sprinting = true;
+                // Hier den Crouch-Status aktivieren, z.B. die Höhe anpassen
+                print("Sprint: true");
+            }
+            else if (context.canceled) // Taste wurde losgelassen
+            {
+                sprinting = false;
+                // Hier den Crouch-Status wieder zurücksetzen
+                print("Sprint: false");
+            }
         }
 
         public void OnCrouch(InputAction.CallbackContext context)
@@ -86,7 +108,9 @@ namespace Game.Interaction.Input
             MovementTimingSettings preset = (crouching ? (timingCrouch ?? timingNormal) : timingNormal).asset;
             float maxSpeed = preset.maxSpeed;
             if (crouching)
+            {
                 maxSpeed *= 0.65f;
+            }
 
             float deltaTime = Time.deltaTime;
             Vector3 targetVelocity =
@@ -104,16 +128,22 @@ namespace Game.Interaction.Input
             }
 
             if (isGrounded && verticalVelocity < 0f)
+            {
                 verticalVelocity = -gravity * 2f * deltaTime; // ✅ FIX #1
+            }
             else
+            {
                 verticalVelocity -= gravity * deltaTime;
+            }
 
-            Vector3 motion = currentVelocity;
+            Vector3 motion = currentVelocity * (sprinting ? 2 : 1);
             motion.y = verticalVelocity;
             controller.Move(motion * deltaTime);
 
             if (isGrounded)
+            {
                 controller.Move(Vector3.down * gravity * deltaTime * 0.15f); // ✅ FIX #2
+            }
 
             // Verhältnis der neuen Höhe zur alten Höhe
             float targetHeight = crouching ? crouchHeight : standHeight;
@@ -152,7 +182,9 @@ namespace Game.Interaction.Input
                 );
 
                 if (!overlaps)
+                {
                     break;
+                }
 
                 cachedTransform.position += Vector3.up * step;
             }

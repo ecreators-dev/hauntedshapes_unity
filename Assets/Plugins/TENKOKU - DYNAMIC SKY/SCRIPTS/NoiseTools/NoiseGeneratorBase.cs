@@ -66,7 +66,11 @@ namespace NoiseTools
         protected int Repeat(int i)
         {
             i %= _repeat;
-            if (i < 0) i += _repeat;
+            if (i < 0)
+            {
+                i += _repeat;
+            }
+
             return i;
         }
 

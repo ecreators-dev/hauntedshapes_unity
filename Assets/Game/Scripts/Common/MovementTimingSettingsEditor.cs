@@ -43,7 +43,10 @@ namespace Game.Interaction.Input
 
             EditorGUI.DrawRect(new Rect(r.x, r.y, aW, r.height), new Color(0f, 0.9f, 1f, 0.4f)); // accel
             if (plateauW > 0.5f)
+            {
                 EditorGUI.DrawRect(new Rect(r.x + aW, r.y, plateauW, r.height), new Color(0f, 1f, 0f, 0.25f)); // plateau
+            }
+
             EditorGUI.DrawRect(new Rect(r.x + aW + plateauW, r.y, dW, r.height), new Color(1f, 0f, 0f, 0.4f)); // decel
         }
     }

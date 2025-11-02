@@ -22,7 +22,9 @@ namespace Game.Interaction
         public override GUIContent GetPreviewTitle()
         {
             if (swing != null)
+            {
                 return new GUIContent($"{ObjectNames.NicifyVariableName(swing.GetType().Name)} (Script)");
+            }
 
             return base.GetPreviewTitle();
         }

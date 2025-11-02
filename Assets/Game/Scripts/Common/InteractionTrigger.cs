@@ -40,7 +40,9 @@ namespace Game.Interaction
             bool allowEvents = this.GameController_OnInteractionTriggerEnter(other).GetValueOrDefault();
 
             if (allowEvents)
+            {
                 TriggerEnterEvent?.Invoke(other);
+            }
 
             IsPlayerInZoneThisFrame = other.CompareTag("Player");
             print($"Triggerzone Enter with: {other.tag}");
@@ -56,7 +58,9 @@ namespace Game.Interaction
             bool allowEvents = this.GameController_OnInteractionTriggerExit(other).GetValueOrDefault();
 
             if (allowEvents)
+            {
                 TriggerExitEvent?.Invoke(other);
+            }
 
             IsPlayerInZoneThisFrame = false;
         }

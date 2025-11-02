@@ -51,12 +51,16 @@ namespace Tenkoku.Effects
 
                 Vector3 v = Vector3.one * 0.5f;
                 if (sunTransform)
-                    v = camComponent.WorldToViewportPoint(transform.position + (-sunTransform.forward * 100.0f));
-                else
-                    v = tempVec;
+            {
+                v = camComponent.WorldToViewportPoint(transform.position + (-sunTransform.forward * 100.0f));
+            }
+            else
+            {
+                v = tempVec;
+            }
 
-                //Downsample texture
-                rtW = source.width / sunShaftDownsample;
+            //Downsample texture
+            rtW = source.width / sunShaftDownsample;
                 rtH = source.height / sunShaftDownsample;
 
                 RenderTexture lrColorB;

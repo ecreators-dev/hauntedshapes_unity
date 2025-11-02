@@ -108,38 +108,62 @@ namespace Tenkoku.Core
 
 			// Assign audio source properties
 			if (audioWind != null && !sourceWind.isPlaying){
-				if (useMixGroup != null) sourceWind.outputAudioMixerGroup = useMixGroup;
-				sourceWind.clip = audioWind;
+				if (useMixGroup != null)
+                    {
+                        sourceWind.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceWind.clip = audioWind;
 				sourceWind.loop = true;
 				sourceWind.Play();
 			}
 			if (audioTurb1 != null && !sourceTurb1.isPlaying){
-				if (useMixGroup != null) sourceTurb1.outputAudioMixerGroup = useMixGroup;
-				sourceTurb1.clip = audioTurb1;
+				if (useMixGroup != null)
+                    {
+                        sourceTurb1.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceTurb1.clip = audioTurb1;
 				sourceTurb1.loop = true;
 				sourceTurb1.Play();
 			}
 			if (audioTurb2 != null && !sourceTurb2.isPlaying){
-				if (useMixGroup != null) sourceTurb2.outputAudioMixerGroup = useMixGroup;
-				sourceTurb2.clip = audioTurb2;
+				if (useMixGroup != null)
+                    {
+                        sourceTurb2.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceTurb2.clip = audioTurb2;
 				sourceTurb2.loop = true;
 				sourceTurb2.Play();
 			}
 			if (audioRain != null && !sourceRain.isPlaying){
-				if (useMixGroup != null) sourceRain.outputAudioMixerGroup = useMixGroup;
-				sourceRain.clip = audioRain;
+				if (useMixGroup != null)
+                    {
+                        sourceRain.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceRain.clip = audioRain;
 				sourceRain.loop = true;
 				sourceRain.Play();
 			}
 			if (audioAmbDay != null && !sourceAmbDay.isPlaying){
-				if (useMixGroup != null) sourceAmbDay.outputAudioMixerGroup = useMixGroup;
-				sourceAmbDay.clip = audioAmbDay;
+				if (useMixGroup != null)
+                    {
+                        sourceAmbDay.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceAmbDay.clip = audioAmbDay;
 				sourceAmbDay.loop = true;
 				sourceAmbDay.Play();
 			}
 			if (audioAmbNight != null && !sourceAmbNight.isPlaying){
-				if (useMixGroup != null) sourceAmbNight.outputAudioMixerGroup = useMixGroup;
-				sourceAmbNight.clip = audioAmbNight;
+				if (useMixGroup != null)
+                    {
+                        sourceAmbNight.outputAudioMixerGroup = useMixGroup;
+                    }
+
+                    sourceAmbNight.clip = audioAmbNight;
 				sourceAmbNight.loop = true;
 				sourceAmbNight.Play();
 			}

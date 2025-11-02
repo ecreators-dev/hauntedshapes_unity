@@ -47,7 +47,9 @@ namespace Game.Interaction
                 OnEnable();
 
                 if (modeProperty == null)
+                {
                     return;
+                }
             }
 
             // === PrefixLabel + EnumPopup ===
@@ -119,9 +121,13 @@ namespace Game.Interaction
             float height = space.height - 2 * margin - 2 * 16;
 
             if (width < height)
+            {
                 height = width;
+            }
             else
+            {
                 width = height;
+            }
 
             radius = Mathf.Max(radius, width) - 2 * margin - 2 * 16;
 

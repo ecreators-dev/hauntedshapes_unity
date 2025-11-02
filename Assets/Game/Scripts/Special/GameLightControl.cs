@@ -31,7 +31,9 @@ namespace Game.Interaction
         private void ReadDefaultSettings()
         {
             if (savedSettingsDefault)
+            {
                 return;
+            }
 
             this.savedSettingsDefault = true;
             Color color = beleuchtung.color;
@@ -50,7 +52,9 @@ namespace Game.Interaction
         public void Flicker()
         {
             if (!IsEnabled)
+            {
                 return;
+            }
 
             // Vorbereitung:
             DisableDanger();
@@ -81,7 +85,9 @@ namespace Game.Interaction
                     yield return new WaitForEndOfFrame();
 
                     if (flickerRoutine == null)
+                    {
                         yield break;
+                    }
                 }
             }
         }
@@ -106,7 +112,9 @@ namespace Game.Interaction
         public void TurnOn()
         {
             if (brokenLight)
+            {
                 return;
+            }
 
             beleuchtung.GetComponent<Light>().enabled = true;
         }

@@ -34,8 +34,12 @@ namespace CloudSkybox
             serializedObject.ApplyModifiedProperties();
 
             if (shouldRebuild)
+            {
                 foreach (var t in targets)
+                {
                     ((NoiseVolume)t).RebuildTexture();
+                }
+            }
         }
 
         static void CreateAsset(int resolution)
@@ -44,9 +48,14 @@ namespace CloudSkybox
             var path = AssetDatabase.GetAssetPath(Selection.activeObject);
 
             if (string.IsNullOrEmpty(path))
+            {
                 path = "Assets";
+            }
             else if (Path.GetExtension(path) != "")
+            {
                 path = path.Replace(Path.GetFileName(AssetDatabase.GetAssetPath(Selection.activeObject)), "");
+            }
+
             var assetPathName = AssetDatabase.GenerateUniqueAssetPath(path + "/NewNoiseVolume.asset");
 
             // Create an asset.

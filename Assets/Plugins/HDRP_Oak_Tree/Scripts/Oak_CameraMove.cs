@@ -35,23 +35,31 @@ public class Oak_CameraMove : MonoBehaviour {
 	void Start ()
 	{
 		if (!showCursor)
-			Cursor.lockState = CursorLockMode.Locked;
-		else
-			Cursor.lockState = CursorLockMode.None;
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
-		Cursor.visible = showCursor;
+        Cursor.visible = showCursor;
 	}
 
 	void Update ()
 	{
 
 		if(Input.GetKeyDown(KeyCode.F))
-			isActive = !isActive;
+        {
+            isActive = !isActive;
+        }
 
-		if(!isActive)
-			return;
+        if (!isActive)
+        {
+            return;
+        }
 
-		rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
+        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
 		rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
 		rotationY = Mathf.Clamp (rotationY, -90, 90);
 

@@ -818,15 +818,20 @@ bool totalEclipse = false;
 		weatherHasStarted = false;
 
 		////TURN OFF ANTI ALIASING in forward mode
-	    if (disableMSA) QualitySettings.antiAliasing = 0;
+	    if (disableMSA)
+            {
+                QualitySettings.antiAliasing = 0;
+            }
 
-	    //CACHE COLOR SPACE (for performance)
-	    _linearSpace = QualitySettings.activeColorSpace;
+            //CACHE COLOR SPACE (for performance)
+            _linearSpace = QualitySettings.activeColorSpace;
 
 		//TURN OFF BUILT-IN FOG
-		if (enableFog) UnityEngine.RenderSettings.fog = false;
-
-	}
+		if (enableFog)
+            {
+                UnityEngine.RenderSettings.fog = false;
+            }
+        }
 
 
 
@@ -874,13 +879,27 @@ bool totalEclipse = false;
 		}
 
 		//SET DEFAULT POSITIONS
-		if (libComponent.sunObject != null) libComponent.sunObject.localPosition = sunBasePosition;
-		if (libComponent.sunSphereObject != null) libComponent.sunSphereObject.localPosition = Vector3.zero;
+		if (libComponent.sunObject != null)
+            {
+                libComponent.sunObject.localPosition = sunBasePosition;
+            }
 
-		if (libComponent.moonObject != null) libComponent.moonObject.localPosition = moonBasePosition;
-		if (libComponent.moonSphereObject != null) libComponent.moonSphereObject.localPosition = Vector3.zero;
+            if (libComponent.sunSphereObject != null)
+            {
+                libComponent.sunSphereObject.localPosition = Vector3.zero;
+            }
 
-		libComponent.planetTransMercury.localPosition = Vector3.zero;
+            if (libComponent.moonObject != null)
+            {
+                libComponent.moonObject.localPosition = moonBasePosition;
+            }
+
+            if (libComponent.moonSphereObject != null)
+            {
+                libComponent.moonSphereObject.localPosition = Vector3.zero;
+            }
+
+            libComponent.planetTransMercury.localPosition = Vector3.zero;
 		libComponent.planetTransVenus.localPosition = Vector3.zero;
 		libComponent.planetTransMars.localPosition = Vector3.zero;
 		libComponent.planetTransJupiter.localPosition = Vector3.zero;
@@ -1034,13 +1053,16 @@ bool totalEclipse = false;
 
 		////TURN OFF ANTI ALIASING
 		#if UNITY_EDITOR
-			if (disableMSA) QualitySettings.antiAliasing = 0;
-		#endif
+			if (disableMSA)
+            {
+                QualitySettings.antiAliasing = 0;
+            }
+#endif
 
 
-		//set project layer masks
-		#if UNITY_EDITOR
-			if (!Application.isPlaying){
+            //set project layer masks
+#if UNITY_EDITOR
+            if (!Application.isPlaying){
 				tenLayerMasks.Clear();
 				for (i = 0; i < 32; i++){
 					layerName = LayerMask.LayerToName(i);
@@ -1083,17 +1105,27 @@ bool totalEclipse = false;
 
 
 		//UPDATE SYSTEM TIMER
-		if (!autoTime) useTimeCompression = 0f;
+		if (!autoTime)
+            {
+                useTimeCompression = 0f;
+            }
 
-		//timerCloudMod = 1f;
+            //timerCloudMod = 1f;
 
-	    	if (!useAutoTime){
+            if (!useAutoTime){
 	    		//timerCloudMod = 0.0f;
 	    	} else {
 	    		cloudStepTime += (_deltaTime * useTimeCompression);
-	    		if (cloudStepTime >= 1f) cloudStepTime += _deltaTime;
-	    		if (lastSecond != currentSecond) cloudStepTime = 0f;
-	    	}
+	    		if (cloudStepTime >= 1f)
+                {
+                    cloudStepTime += _deltaTime;
+                }
+
+                if (lastSecond != currentSecond)
+                {
+                    cloudStepTime = 0f;
+                }
+            }
 
 
 
@@ -1306,9 +1338,12 @@ bool totalEclipse = false;
 					reflectionTimer += _deltaTime;
 
 					useReflectionFPS = 20f;
-					if (probeHasUpdated) useReflectionFPS = reflectionProbeFPS;
+					if (probeHasUpdated)
+                        {
+                            useReflectionFPS = reflectionProbeFPS;
+                        }
 
-					if (reflectionTimer >= (1.0f/useReflectionFPS)){
+                        if (reflectionTimer >= (1.0f/useReflectionFPS)){
 						libComponent.tenkokuReflectionObject.RenderProbe(null);
 						libComponent.tenkokuReflectionObject.transform.localPosition = libComponent.skyObject.localPosition;
 						reflectionTimer = 0.0f;
@@ -1339,8 +1374,12 @@ bool totalEclipse = false;
 		// --------------------
 		//Set Linear Mode on Shader
 		isLin = 0.0f;
-		if (_linearSpace == ColorSpace.Linear) isLin = 1.0f;
-		if (isLin != currIsLin){
+		if (_linearSpace == ColorSpace.Linear)
+            {
+                isLin = 1.0f;
+            }
+
+            if (isLin != currIsLin){
 			currIsLin = isLin;
 		}
 		Shader.SetGlobalFloat("_tenkokuIsLinear",isLin);
@@ -1413,8 +1452,12 @@ bool totalEclipse = false;
 	    //Calculate moon/horizon atitude
 		sunsetDegrees = 20.0f;
 		sunFac = libComponent.sunlightObject.eulerAngles.x;
-		if (sunFac > 90.0f) sunFac = 0.0f;
-		sunsetFac = Mathf.Clamp01(Mathf.Lerp(-0.5f,1.0f,Mathf.Clamp01(sunFac / sunsetDegrees)));
+		if (sunFac > 90.0f)
+            {
+                sunFac = 0.0f;
+            }
+
+            sunsetFac = Mathf.Clamp01(Mathf.Lerp(-0.5f,1.0f,Mathf.Clamp01(sunFac / sunsetDegrees)));
 
 	    //set explicit size of sun in Custom mode
 	    sunCalcSize = sunSize*0.5f;
@@ -1513,8 +1556,12 @@ bool totalEclipse = false;
 		//Calculate moon/horizon atitude
 		sunsetDegrees = 20.0f;
 		moonFac = libComponent.nightSkyLightObject.eulerAngles.x;
-		if (moonFac > 90.0f) moonFac = 0.0f;
-		moonsetFac = Mathf.Clamp01(Mathf.Lerp(-0.5f,1.0f,Mathf.Clamp01(moonFac / sunsetDegrees)));
+		if (moonFac > 90.0f)
+            {
+                moonFac = 0.0f;
+            }
+
+            moonsetFac = Mathf.Clamp01(Mathf.Lerp(-0.5f,1.0f,Mathf.Clamp01(moonFac / sunsetDegrees)));
 		Shader.SetGlobalFloat("Tenkoku_MoonHFac",moonsetFac);
 
 	    //set explicit size of moon in Custom mode
@@ -1743,9 +1790,17 @@ bool totalEclipse = false;
 
 	    //solar ecliptic movement
 	    eclipticStarAngle = (starValue);
-	    if (eclipticStarAngle == 0.0) eclipticStarAngle = 1.0f;
-	    if (eclipticStarAngle < 0.5f && eclipticStarAngle > 0.0f) eclipticStarAngle = 0.5f + (0.5f - eclipticStarAngle);
-	    eclipticStarAngle += 1.35f;
+	    if (eclipticStarAngle == 0.0)
+            {
+                eclipticStarAngle = 1.0f;
+            }
+
+            if (eclipticStarAngle < 0.5f && eclipticStarAngle > 0.0f)
+            {
+                eclipticStarAngle = 0.5f + (0.5f - eclipticStarAngle);
+            }
+
+            eclipticStarAngle += 1.35f;
 
 	   
 	    //GALAXY / Skybox Rendering
@@ -1798,10 +1853,17 @@ bool totalEclipse = false;
 
 	    if (libComponent.starRenderSystem != null){
 	    	if (starTypeIndex == 2){
-				if (libComponent.starParticleSystem.enabled) libComponent.starParticleSystem.enabled = false;
-		    } else {
-		    	if (!libComponent.starParticleSystem.enabled) libComponent.starParticleSystem.enabled = true;
-	    		libComponent.starRenderSystem.starBrightness.a = starIntensity;
+				if (libComponent.starParticleSystem.enabled)
+                    {
+                        libComponent.starParticleSystem.enabled = false;
+                    }
+                } else {
+		    	if (!libComponent.starParticleSystem.enabled)
+                    {
+                        libComponent.starParticleSystem.enabled = true;
+                    }
+
+                    libComponent.starRenderSystem.starBrightness.a = starIntensity;
 		    }
 	    }
 	    
@@ -1845,9 +1907,12 @@ bool totalEclipse = false;
 		setAmbCol = useAlpha;
 		setAmbCol.a = useAlpha.a*0.75f;
 		setAmbCol.a = useAlpha.a*1.5f;
-		if (setAmbCol.a > 1.0f) setAmbCol.a = 1.0f;
+		if (setAmbCol.a > 1.0f)
+            {
+                setAmbCol.a = 1.0f;
+            }
 
-		colorSkyBaseLow = colorSkyBase;
+            colorSkyBaseLow = colorSkyBase;
 		colorHorizonLow = colorHorizon;
 		
 		colorSkyBase = (colorSkyBase * 0.8f);
@@ -2179,8 +2244,11 @@ bool totalEclipse = false;
 			//if (libComponent.particleObjectRainFog.particleCount > 0.0f) ClampParticle("rain fog");
 		}
 		if (libComponent.particleObjectRainSplash != null){
-			if (libComponent.particleObjectRainSplash.particleCount > 0.0f) ClampParticle("rain splash");
-		}
+			if (libComponent.particleObjectRainSplash.particleCount > 0.0f)
+                {
+                    ClampParticle("rain splash");
+                }
+            }
 		if (libComponent.particleObjectFog != null){
 			//if (libComponent.particleObjectFog.particleCount > 0.0f) ClampParticle("fog");
 		}
@@ -2849,8 +2917,12 @@ bool totalEclipse = false;
 			look = Quaternion.LookRotation(delta);
 			vertical = look.eulerAngles.x;
 
-			if (vertical > 90.0f) vertical = 90f - (vertical-90.0f);
-			vertical = Mathf.Clamp01((vertical) / 10.0f); //degrees
+			if (vertical > 90.0f)
+                {
+                    vertical = 90f - (vertical-90.0f);
+                }
+
+                vertical = Mathf.Clamp01((vertical) / 10.0f); //degrees
 
 			//set the light intensity
 			libComponent.lightObjectNight.intensity = libComponent.lightObjectNight.intensity * Mathf.Lerp(0.0f,1.0f,vertical);
@@ -2875,9 +2947,12 @@ bool totalEclipse = false;
 	    // --   FILL LIGHT OBJECT   --
 	    // ----------------------------
 		fillFac = libComponent.worldlightObject.eulerAngles.x / 90f;
-		if (fillFac > 1f) fillFac = 0f;
+		if (fillFac > 1f)
+            {
+                fillFac = 0f;
+            }
 
-		fillIntensity = Mathf.Lerp(0.0f, 3.0f, nightBrightness);
+            fillIntensity = Mathf.Lerp(0.0f, 3.0f, nightBrightness);
 
 		libComponent.lightObjectFill.intensity = Mathf.Clamp01(Mathf.Lerp(fillIntensity, -2.0f, fillFac));
 		if (libComponent.lightObjectFill.intensity > 0f){
@@ -2900,8 +2975,12 @@ bool totalEclipse = false;
 			look = Quaternion.LookRotation(delta);
 			vertical = look.eulerAngles.x;
 			
-			if (vertical > 90.0f) vertical = 90f - (vertical-90.0f);
-			vertical = Mathf.Clamp01(vertical / 2.0f); //degrees
+			if (vertical > 90.0f)
+                {
+                    vertical = 90f - (vertical-90.0f);
+                }
+
+                vertical = Mathf.Clamp01(vertical / 2.0f); //degrees
 
 		}
 
@@ -2945,30 +3024,46 @@ bool totalEclipse = false;
 			//if (!totalEclipse) eclTarget = eclTemp;
 
 			//eclipseFactor = Mathf.Clamp01(Mathf.Lerp(1.4f,0.0f,ecldiff));
-			if (totalEclipse && eclTemp < 0.96f) totalEclipse = false;
-			if (!totalEclipse && eclTemp > 0.965f) totalEclipse = true;
-			
+			if (totalEclipse && eclTemp < 0.96f)
+                {
+                    totalEclipse = false;
+                }
 
-		} else {
+                if (!totalEclipse && eclTemp > 0.965f)
+                {
+                    totalEclipse = true;
+                }
+            } else {
 			//Accumulate and average eclipse positions
 			float eclSampleAccum = (1f - Vector3.Angle(libComponent.moonObject.position, libComponent.sunObject.position));
 			//eclSampleAccum = RoundDigit(eclSampleAccum, 1);
 
-			if (eclSampleAccum > 0.90f && eclSampleAccum < 0.93f) eclSampleAccum = 0.90f;
-			if (eclSampleAccum > 0.93f && eclSampleAccum < 0.96f) eclSampleAccum = 0.93f;
-			if (eclSampleAccum > 0.96f && eclSampleAccum < 0.97f) eclSampleAccum = 0.96f;
-			//if (!totalEclipse && (eclSampleAccum - eclTemp) > 0.1f) eclSampleAccum = eclTemp;
-			//if (totalEclipse && eclSampleAccum >= 0.96f) eclSampleAccum = 1.5f;
+			if (eclSampleAccum > 0.90f && eclSampleAccum < 0.93f)
+                {
+                    eclSampleAccum = 0.90f;
+                }
 
-			//if (eclSampleAccum > 0.90f && eclSampleAccum < 0.93f) eclSampleAccum = 0.90f;
+                if (eclSampleAccum > 0.93f && eclSampleAccum < 0.96f)
+                {
+                    eclSampleAccum = 0.93f;
+                }
 
-			//if (eclSampleAccum >= 0.9f){
-			//	float eclFac = 1f-((1f - eclSampleAccum) * 10f);
-			//	eclSampleAccum = eclSampleAccum * Mathf.Lerp(1.0f, 10.0f, eclFac);
-			//}
-			//eclSampleAccum = Mathf.Clamp01(eclSampleAccum);
+                if (eclSampleAccum > 0.96f && eclSampleAccum < 0.97f)
+                {
+                    eclSampleAccum = 0.96f;
+                }
+                //if (!totalEclipse && (eclSampleAccum - eclTemp) > 0.1f) eclSampleAccum = eclTemp;
+                //if (totalEclipse && eclSampleAccum >= 0.96f) eclSampleAccum = 1.5f;
 
-			eclAccumulation += eclSampleAccum;
+                //if (eclSampleAccum > 0.90f && eclSampleAccum < 0.93f) eclSampleAccum = 0.90f;
+
+                //if (eclSampleAccum >= 0.9f){
+                //	float eclFac = 1f-((1f - eclSampleAccum) * 10f);
+                //	eclSampleAccum = eclSampleAccum * Mathf.Lerp(1.0f, 10.0f, eclFac);
+                //}
+                //eclSampleAccum = Mathf.Clamp01(eclSampleAccum);
+
+                eclAccumulation += eclSampleAccum;
 			eclAccumCount += 1;
 		}
 
@@ -2976,12 +3071,20 @@ bool totalEclipse = false;
 		if (totalEclipse){
 			eclTarget = 1.0f;
 
-			if (totalEclipseFactor < 1f) totalEclipseFactor += Time.deltaTime;
-			totalEclipseFactor = Mathf.Clamp01(totalEclipseFactor);
+			if (totalEclipseFactor < 1f)
+                {
+                    totalEclipseFactor += Time.deltaTime;
+                }
+
+                totalEclipseFactor = Mathf.Clamp01(totalEclipseFactor);
 		} else {
 			eclTarget = eclTemp;
-			if (totalEclipseFactor > 0f) totalEclipseFactor -= Time.deltaTime;
-			totalEclipseFactor = Mathf.Clamp01(totalEclipseFactor);
+			if (totalEclipseFactor > 0f)
+                {
+                    totalEclipseFactor -= Time.deltaTime;
+                }
+
+                totalEclipseFactor = Mathf.Clamp01(totalEclipseFactor);
 		}
 
 
@@ -3001,9 +3104,12 @@ bool totalEclipse = false;
 		useMieMnAmount = mieMnAmount * mieEclFac;
 		useMieAmount = mieAmount * mieEclFac;
 
-if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
+if (float.IsNaN(eclipseFactor))
+            {
+                eclipseFactor = 1f;
+            }
 
-		Shader.SetGlobalFloat("_Tenkoku_EclipseFactor", eclipseFactor);
+            Shader.SetGlobalFloat("_Tenkoku_EclipseFactor", eclipseFactor);
 		Shader.SetGlobalFloat("_Tenkoku_TotalEclipseFactor", 1f-totalEclipseFactor);
 		libComponent.lightObjectWorld.intensity *= Mathf.Max(eclipseFactor,0.1f);
 		if (libComponent.eclipseObject != null && totalEclipseFactor > 0.0f){
@@ -3104,10 +3210,17 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 		//check for weather update
 		weather_autoForecastTime = Mathf.Max(weather_autoForecastTime,0.01f);
 		weather_TransitionTime = Mathf.Max(weather_TransitionTime, 0.001f);
-		if (weather_PatternTime > (weather_autoForecastTime*60.0f) && weather_autoForecastTime >= 0.05f) doWeatherUpdate = true;
-		if (weather_forceUpdate) doWeatherUpdate = true;
-		
-		if (doWeatherUpdate && weatherHasStarted){
+		if (weather_PatternTime > (weather_autoForecastTime*60.0f) && weather_autoForecastTime >= 0.05f)
+            {
+                doWeatherUpdate = true;
+            }
+
+            if (weather_forceUpdate)
+            {
+                doWeatherUpdate = true;
+            }
+
+            if (doWeatherUpdate && weatherHasStarted){
 			weather_forceUpdate = false;
 			weather_PatternTime = 0.0f;
 			
@@ -3314,8 +3427,12 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 			hourMode = "";
 		}
 
-		if (currentYear < 0) eon = "bc";
-		setString = setString.Replace("hh",useHour.ToString("00"));
+		if (currentYear < 0)
+            {
+                eon = "bc";
+            }
+
+            setString = setString.Replace("hh",useHour.ToString("00"));
 		setString = setString.Replace("mm",currentMinute.ToString("00"));
 		setString = setString.Replace("ss",currentSecond.ToString("00"));
 		setString = setString.Replace("Y",Mathf.Abs(currentYear).ToString());
@@ -3340,21 +3457,38 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 
 		//check for leap Year (by div 4 method)
 		leapYear = false;
-		if ( (checkYear / 4.0f) == Mathf.FloorToInt(checkYear / 4.0f) ) leapYear = true;
+		if ( (checkYear / 4.0f) == Mathf.FloorToInt(checkYear / 4.0f) )
+            {
+                leapYear = true;
+            }
 
-		//double check for leap Year (by div 100 + div 400 method)
-		if ((checkYear / 100.0f) == Mathf.FloorToInt(checkYear / 100.0f)){
-			if ((checkYear / 400.0f) != Mathf.FloorToInt(checkYear / 400.0f)) leapYear = false;
-		}
+            //double check for leap Year (by div 100 + div 400 method)
+            if ((checkYear / 100.0f) == Mathf.FloorToInt(checkYear / 100.0f)){
+			if ((checkYear / 400.0f) != Mathf.FloorToInt(checkYear / 400.0f))
+                {
+                    leapYear = false;
+                }
+            }
 		
 		//calculate month length
 		monthLength = 31;
 		testMonth = Mathf.FloorToInt(checkMonth);
-		if (testMonth == 4 || testMonth == 6 || testMonth == 9 || testMonth == 11) monthLength = 30;
-		if (testMonth == 2 && !leapYear) monthLength = 28;
-		if (testMonth == 2 && leapYear) monthLength = 29;
+		if (testMonth == 4 || testMonth == 6 || testMonth == 9 || testMonth == 11)
+            {
+                monthLength = 30;
+            }
 
-		return monthLength;
+            if (testMonth == 2 && !leapYear)
+            {
+                monthLength = 28;
+            }
+
+            if (testMonth == 2 && leapYear)
+            {
+                monthLength = 29;
+            }
+
+            return monthLength;
 	}
 
 
@@ -3375,61 +3509,239 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 		monthFac = RecalculateLeapYear(currentMonth,currentYear);
 
 		//clamp and pass all values
-		if (currentSecond > 59 || currentSecond < 0) currentMinute += Mathf.FloorToInt(currentSecond/60.0f);
-		if (currentSecond > 59) currentSecond = 0;
-		if (currentSecond < 0) currentSecond = 59;
-		if (currentMinute > 59 || currentMinute < 0.0) currentHour += Mathf.FloorToInt(currentMinute/60.0f);
-		if (currentMinute > 59) currentMinute = 0;
-		if (currentMinute < 0) currentMinute = 59;
+		if (currentSecond > 59 || currentSecond < 0)
+            {
+                currentMinute += Mathf.FloorToInt(currentSecond/60.0f);
+            }
 
-		if (currentHour > 23 || currentHour < 0) currentDay += Mathf.CeilToInt((currentHour/24.0f));
-		if (currentHour > 23) currentHour = 0;
-		if (currentHour < 0) currentHour = 23;
+            if (currentSecond > 59)
+            {
+                currentSecond = 0;
+            }
 
-		if (currentDay > monthFac || currentDay < 1) currentMonth += Mathf.CeilToInt((currentDay/(monthFac*1.0f))-1.0f);
-		if (currentDay > monthFac) currentDay = 1;
-		if (currentDay < 1) currentDay = RecalculateLeapYear(currentMonth-1,currentYear);
-		if (currentMonth > 12 || currentMonth < 1) currentYear += Mathf.CeilToInt((currentMonth/12.0f)-1f);
-		if (currentMonth > 12) currentMonth = 1;
-		if (currentMonth < 1) currentMonth = 12;
-		if (currentYear == 0) currentYear = 1;
-		
-		//clamp and pass all moon values
-		if (moonSecond > 59 || moonSecond < 0) moonMinute += Mathf.FloorToInt(moonSecond/60.0f);
-		if (moonSecond > 59) moonSecond = 0;
-		if (moonSecond < 0) moonSecond = 59;
-		if (moonMinute > 59 || moonMinute < 0.0) moonHour += Mathf.FloorToInt(moonMinute/60.0f);
-		if (moonMinute > 59) moonMinute = 0;
-		if (moonMinute < 0) moonMinute = 59;
-		if (moonHour > 24 || moonHour < 1) moonDay += Mathf.CeilToInt((moonHour/24.0f)-1f);
-		if (moonHour > 24) moonHour = 1;
-		if (moonHour < 1) moonHour = 24;
-		if (moonDay > monthFac || moonDay < 1) moonMonth += Mathf.CeilToInt((moonDay/(monthFac*1.0f))-1.0f);
-		if (moonDay > monthFac) moonDay = 1;
-		if (moonDay < 1) moonDay = RecalculateLeapYear(moonMonth-1,currentYear);
-		if (moonMonth > 12 || moonMonth < 1) moonYear += Mathf.CeilToInt((moonMonth/12.0f)-1f);
-		if (moonMonth > 12) moonMonth = 1;
-		if (moonMonth < 1) moonMonth = 12;
-		
-		//clamp and pass all star values
-		if (starSecond > 59 || starSecond < 0) starMinute += Mathf.FloorToInt(starSecond/60.0f);
-		if (starSecond > 59) starSecond = 0;
-		if (starSecond < 0) starSecond = 59;
-		if (starMinute > 59 || starMinute < 0.0) starHour += Mathf.FloorToInt(starMinute/60.0f);
-		if (starMinute > 59) starMinute = 0;
-		if (starMinute < 0) starMinute = 59;
-		if (starHour > 24 || starHour < 1) starDay += Mathf.CeilToInt((starHour/24.0f)-1f);
-		if (starHour > 24) starHour = 1;
-		if (starHour < 1) starHour = 24;
-		if (starDay > monthFac || starDay < 1) starMonth += Mathf.CeilToInt((starDay/(monthFac*1.0f))-1.0f);
-		if (starDay > monthFac) starDay = 1;
-		if (starDay < 1) starDay = RecalculateLeapYear(starMonth-1,currentYear);
-		if (starMonth > 12 || starMonth < 1) starYear += Mathf.CeilToInt((starMonth/12.0f)-1f);
-		if (starMonth > 12) starMonth = 1;
-		if (starMonth < 1) starMonth = 12;
-		
-		
-		if (!use24Clock && setHour > 12){
+            if (currentSecond < 0)
+            {
+                currentSecond = 59;
+            }
+
+            if (currentMinute > 59 || currentMinute < 0.0)
+            {
+                currentHour += Mathf.FloorToInt(currentMinute/60.0f);
+            }
+
+            if (currentMinute > 59)
+            {
+                currentMinute = 0;
+            }
+
+            if (currentMinute < 0)
+            {
+                currentMinute = 59;
+            }
+
+            if (currentHour > 23 || currentHour < 0)
+            {
+                currentDay += Mathf.CeilToInt((currentHour/24.0f));
+            }
+
+            if (currentHour > 23)
+            {
+                currentHour = 0;
+            }
+
+            if (currentHour < 0)
+            {
+                currentHour = 23;
+            }
+
+            if (currentDay > monthFac || currentDay < 1)
+            {
+                currentMonth += Mathf.CeilToInt((currentDay/(monthFac*1.0f))-1.0f);
+            }
+
+            if (currentDay > monthFac)
+            {
+                currentDay = 1;
+            }
+
+            if (currentDay < 1)
+            {
+                currentDay = RecalculateLeapYear(currentMonth-1,currentYear);
+            }
+
+            if (currentMonth > 12 || currentMonth < 1)
+            {
+                currentYear += Mathf.CeilToInt((currentMonth/12.0f)-1f);
+            }
+
+            if (currentMonth > 12)
+            {
+                currentMonth = 1;
+            }
+
+            if (currentMonth < 1)
+            {
+                currentMonth = 12;
+            }
+
+            if (currentYear == 0)
+            {
+                currentYear = 1;
+            }
+
+            //clamp and pass all moon values
+            if (moonSecond > 59 || moonSecond < 0)
+            {
+                moonMinute += Mathf.FloorToInt(moonSecond/60.0f);
+            }
+
+            if (moonSecond > 59)
+            {
+                moonSecond = 0;
+            }
+
+            if (moonSecond < 0)
+            {
+                moonSecond = 59;
+            }
+
+            if (moonMinute > 59 || moonMinute < 0.0)
+            {
+                moonHour += Mathf.FloorToInt(moonMinute/60.0f);
+            }
+
+            if (moonMinute > 59)
+            {
+                moonMinute = 0;
+            }
+
+            if (moonMinute < 0)
+            {
+                moonMinute = 59;
+            }
+
+            if (moonHour > 24 || moonHour < 1)
+            {
+                moonDay += Mathf.CeilToInt((moonHour/24.0f)-1f);
+            }
+
+            if (moonHour > 24)
+            {
+                moonHour = 1;
+            }
+
+            if (moonHour < 1)
+            {
+                moonHour = 24;
+            }
+
+            if (moonDay > monthFac || moonDay < 1)
+            {
+                moonMonth += Mathf.CeilToInt((moonDay/(monthFac*1.0f))-1.0f);
+            }
+
+            if (moonDay > monthFac)
+            {
+                moonDay = 1;
+            }
+
+            if (moonDay < 1)
+            {
+                moonDay = RecalculateLeapYear(moonMonth-1,currentYear);
+            }
+
+            if (moonMonth > 12 || moonMonth < 1)
+            {
+                moonYear += Mathf.CeilToInt((moonMonth/12.0f)-1f);
+            }
+
+            if (moonMonth > 12)
+            {
+                moonMonth = 1;
+            }
+
+            if (moonMonth < 1)
+            {
+                moonMonth = 12;
+            }
+
+            //clamp and pass all star values
+            if (starSecond > 59 || starSecond < 0)
+            {
+                starMinute += Mathf.FloorToInt(starSecond/60.0f);
+            }
+
+            if (starSecond > 59)
+            {
+                starSecond = 0;
+            }
+
+            if (starSecond < 0)
+            {
+                starSecond = 59;
+            }
+
+            if (starMinute > 59 || starMinute < 0.0)
+            {
+                starHour += Mathf.FloorToInt(starMinute/60.0f);
+            }
+
+            if (starMinute > 59)
+            {
+                starMinute = 0;
+            }
+
+            if (starMinute < 0)
+            {
+                starMinute = 59;
+            }
+
+            if (starHour > 24 || starHour < 1)
+            {
+                starDay += Mathf.CeilToInt((starHour/24.0f)-1f);
+            }
+
+            if (starHour > 24)
+            {
+                starHour = 1;
+            }
+
+            if (starHour < 1)
+            {
+                starHour = 24;
+            }
+
+            if (starDay > monthFac || starDay < 1)
+            {
+                starMonth += Mathf.CeilToInt((starDay/(monthFac*1.0f))-1.0f);
+            }
+
+            if (starDay > monthFac)
+            {
+                starDay = 1;
+            }
+
+            if (starDay < 1)
+            {
+                starDay = RecalculateLeapYear(starMonth-1,currentYear);
+            }
+
+            if (starMonth > 12 || starMonth < 1)
+            {
+                starYear += Mathf.CeilToInt((starMonth/12.0f)-1f);
+            }
+
+            if (starMonth > 12)
+            {
+                starMonth = 1;
+            }
+
+            if (starMonth < 1)
+            {
+                starMonth = 12;
+            }
+
+            if (!use24Clock && setHour > 12){
 			setHour = currentHour + 12;
 		} else {
 			setHour = currentHour;
@@ -3455,13 +3767,24 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 
 		//CLAMP VALUES
 		yearDiv = 365.0f;
-		if (leapYear) yearDiv = 366.0f;
-		if (setYear > (86400.0f *  yearDiv)) setYear = 0.0f;
-		if (setYear < 0.0f) setYear = (86400.0f *  yearDiv);
-		
+		if (leapYear)
+            {
+                yearDiv = 366.0f;
+            }
 
-		//CALCULATE VALUES
-		dayValue = setDay / 86400.0f;
+            if (setYear > (86400.0f *  yearDiv))
+            {
+                setYear = 0.0f;
+            }
+
+            if (setYear < 0.0f)
+            {
+                setYear = (86400.0f *  yearDiv);
+            }
+
+
+            //CALCULATE VALUES
+            dayValue = setDay / 86400.0f;
 		monthValue = setMonth / (86400.0f * 29.530589f);
 		yearValue = setYear / yearDiv;
 		starValue = setDay / 86400.0f;
@@ -3641,9 +3964,12 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 						}
 					}	
 				}
-				if (usePoint > weather_FogHeight) usePoint = weather_FogHeight;
+				if (usePoint > weather_FogHeight)
+                        {
+                            usePoint = weather_FogHeight;
+                        }
 
-				particlePosition.x = setParticles[px].position.x;
+                        particlePosition.x = setParticles[px].position.x;
 				particlePosition.y = usePoint;
 				particlePosition.z = setParticles[px].position.z;
 				setParticles[px].position = particlePosition;
@@ -3746,20 +4072,59 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 			if (position == 9) texPos = 15; //ambientGI
 			*/
 
-			if (position == 0) texPos = 0.685f; //sun
-			if (position == 1) texPos = 0.685f; //sunray
-			if (position == 2) texPos = 0.385f; //ambientcolor
-			if (position == 3) texPos = 0.28f; //moon
-			if (position == 4) texPos = 0.176f; //skyambient
-			if (position == 5) texPos = 0.476f; //skybase
-			if (position == 6) texPos = 0.885f; //ambientcloud
-			if (position == 7) texPos = 0.576f; //colorhorizon
-			if (position == 8) texPos = 0.79f; //colorcloud
-			if (position == 9) texPos = 0.07f; //ambientGI
+			if (position == 0)
+                {
+                    texPos = 0.685f; //sun
+                }
+
+                if (position == 1)
+                {
+                    texPos = 0.685f; //sunray
+                }
+
+                if (position == 2)
+                {
+                    texPos = 0.385f; //ambientcolor
+                }
+
+                if (position == 3)
+                {
+                    texPos = 0.28f; //moon
+                }
+
+                if (position == 4)
+                {
+                    texPos = 0.176f; //skyambient
+                }
+
+                if (position == 5)
+                {
+                    texPos = 0.476f; //skybase
+                }
+
+                if (position == 6)
+                {
+                    texPos = 0.885f; //ambientcloud
+                }
+
+                if (position == 7)
+                {
+                    texPos = 0.576f; //colorhorizon
+                }
+
+                if (position == 8)
+                {
+                    texPos = 0.79f; //colorcloud
+                }
+
+                if (position == 9)
+                {
+                    texPos = 0.07f; //ambientGI
+                }
 
 
-			//decode texture
-			if (colorRamp != null){
+                //decode texture
+                if (colorRamp != null){
 
 				//decode textures
 				if (DecodedColors != null){
@@ -3806,21 +4171,60 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 		//DECODE GRADIENT
 		if (colorTypeIndex == 1){
 
-			if (position == 0) returnColor = sunGradient.Evaluate( calcTime ); //sun
-			if (position == 1) returnColor = sunGradient.Evaluate( calcTime ); //sunray
-			if (position == 2) returnColor = ambColorGradient.Evaluate( calcTime ); //ambientcolor
-			if (position == 3) returnColor = moonGradient.Evaluate( calcTimeM ); //moon
-			if (position == 4) returnColor = ambDayGradient.Evaluate( calcTime ); //skyDay
-			if (position == 5) returnColor = skyGradient.Evaluate( calcTime ); //skybase
-			if (position == 6) returnColor = cloudGradient.Evaluate( calcTime ); //ambientcloud
-			if (position == 7) returnColor = horizGradient.Evaluate( calcTime ); //colorhorizon
-			if (position == 8) returnColor = cloudAmbGradient.Evaluate( calcTime ); //colorcloud
-			if (position == 9) returnColor = ambLightGradient.Evaluate( calcTime ); //ambientGI
+			if (position == 0)
+                {
+                    returnColor = sunGradient.Evaluate( calcTime ); //sun
+                }
+
+                if (position == 1)
+                {
+                    returnColor = sunGradient.Evaluate( calcTime ); //sunray
+                }
+
+                if (position == 2)
+                {
+                    returnColor = ambColorGradient.Evaluate( calcTime ); //ambientcolor
+                }
+
+                if (position == 3)
+                {
+                    returnColor = moonGradient.Evaluate( calcTimeM ); //moon
+                }
+
+                if (position == 4)
+                {
+                    returnColor = ambDayGradient.Evaluate( calcTime ); //skyDay
+                }
+
+                if (position == 5)
+                {
+                    returnColor = skyGradient.Evaluate( calcTime ); //skybase
+                }
+
+                if (position == 6)
+                {
+                    returnColor = cloudGradient.Evaluate( calcTime ); //ambientcloud
+                }
+
+                if (position == 7)
+                {
+                    returnColor = horizGradient.Evaluate( calcTime ); //colorhorizon
+                }
+
+                if (position == 8)
+                {
+                    returnColor = cloudAmbGradient.Evaluate( calcTime ); //colorcloud
+                }
+
+                if (position == 9)
+                {
+                    returnColor = ambLightGradient.Evaluate( calcTime ); //ambientGI
+                }
 
 
 
-			//sunray
-			if (position == 1){
+                //sunray
+                if (position == 1){
 				returnColor.r = Mathf.Pow(returnColor.r,3.2f);
 				returnColor.g = Mathf.Pow(returnColor.g,3.2f);
 				returnColor.b = Mathf.Pow(returnColor.b,3.2f);
@@ -4136,11 +4540,18 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 		if (transitionTime <= 0.0f){
 
 			//clamp direction
-			if (transitionDirection > 0.0f) transitionDirection = 1.0f;
-			if (transitionDirection < 0.0f) transitionDirection = -1.0f;
+			if (transitionDirection > 0.0f)
+                {
+                    transitionDirection = 1.0f;
+                }
 
-			//calculate ending time
-			setTransHour = Mathf.Clamp(System.Int32.Parse(transitionTargetTime.Substring(0,2), CultureInfo.InvariantCulture),0,23);
+                if (transitionDirection < 0.0f)
+                {
+                    transitionDirection = -1.0f;
+                }
+
+                //calculate ending time
+                setTransHour = Mathf.Clamp(System.Int32.Parse(transitionTargetTime.Substring(0,2), CultureInfo.InvariantCulture),0,23);
 			setTransMinute = Mathf.Clamp(System.Int32.Parse(transitionTargetTime.Substring(3,2), CultureInfo.InvariantCulture),0,59);
 			setTransSecond = Mathf.Clamp(System.Int32.Parse(transitionTargetTime.Substring(6,2), CultureInfo.InvariantCulture),0,59);
 			endTime = setTransSecond + (setTransMinute*60) + (setTransHour*3600);
@@ -4162,18 +4573,28 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 
 			//fudge numbers if they are the same
 			if (startTime == endTime){
-				if (transitionDirection == 1.0f) startTime = startTime + 1;
-				if (transitionDirection == -1.0f) startTime = startTime - 1;
-			}
+				if (transitionDirection == 1.0f)
+                    {
+                        startTime = startTime + 1;
+                    }
+
+                    if (transitionDirection == -1.0f)
+                    {
+                        startTime = startTime - 1;
+                    }
+                }
 
 		}
 
 		//check for transition end
 		endTransition = false;
-		if (transitionTime >= transitionDuration) endTransition = true;
+		if (transitionTime >= transitionDuration)
+            {
+                endTransition = true;
+            }
 
-		//END TRANSITION
-		if (endTransition){
+            //END TRANSITION
+            if (endTransition){
 
 			//useAutoTime = false;
 			doTransition = false;
@@ -4199,15 +4620,26 @@ if (float.IsNaN(eclipseFactor)) eclipseFactor = 1f;
 			if (transitionCurve != null){
 				transFac = transitionCurve.Evaluate(transFac);
 			}
-			if (transitionDirection == 1.0f && endTime > startTime) transTime = Mathf.SmoothStep(startTime, endTime, transFac);
-			if (transitionDirection == -1.0f && endTime < startTime) transTime = Mathf.SmoothStep(startTime, endTime, transFac);
-			if (transitionDirection == 1.0f && endTime < startTime){
+			if (transitionDirection == 1.0f && endTime > startTime)
+                {
+                    transTime = Mathf.SmoothStep(startTime, endTime, transFac);
+                }
+
+                if (transitionDirection == -1.0f && endTime < startTime)
+                {
+                    transTime = Mathf.SmoothStep(startTime, endTime, transFac);
+                }
+
+                if (transitionDirection == 1.0f && endTime < startTime){
 				transTime = Mathf.SmoothStep(startTime, (endTime + 86400f), transFac) % 86400f;
 			}
 			if (transitionDirection == -1.0f && endTime > startTime){
 				transTime = Mathf.SmoothStep(startTime, (endTime - 86400f), transFac);
-				if (transTime < 0) transTime = 86400f - Mathf.Abs(transTime);
-			}
+				if (transTime < 0)
+                    {
+                        transTime = 86400f - Mathf.Abs(transTime);
+                    }
+                }
 			currentHour = (int)(transTime / 3600);
 			currentMinute = (int)((transTime - (currentHour * 3600)) / 60);
 			currentSecond = (int)((transTime - (currentHour * 3600) - (currentMinute * 60)));

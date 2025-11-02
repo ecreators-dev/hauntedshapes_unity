@@ -16,7 +16,9 @@ namespace Game.Interaction
         public void Open()
         {
             if (controlables == null)
+            {
                 return;
+            }
 
             for (int i = 0; i < controlables.Count; i++)
             {
@@ -29,7 +31,9 @@ namespace Game.Interaction
         public void Close()
         {
             if (controlables == null)
+            {
                 return;
+            }
 
             for (int i = 0; i < controlables.Count; i++)
             {
@@ -55,7 +59,9 @@ namespace Game.Interaction
             // eine Wartezeit sein soll
             IndexDelay? delay = delays.FirstOrDefault(d => d.ObjectIndex == index);
             if (delay != null)
+            {
                 yield return new WaitForSecondsRealtime(delay.DelaySeconds);
+            }
 
             targetCall.Invoke();
             yield return null;

@@ -42,14 +42,22 @@ public class Tenkoku_TemporalReprojection : Tenkoku_TemporalEffectBase
         {
             Graphics.Blit(source, destination);
             if (_camera.depthTextureMode == DepthTextureMode.None)
+            {
                 _camera.depthTextureMode = DepthTextureMode.Depth;
+            }
+
             return;
         }
 
         if (reprojectionMatrix == null || reprojectionMatrix.Length != 2)
+        {
             reprojectionMatrix = new Matrix4x4[2];
+        }
+
         if (reprojectionBuffer == null || reprojectionBuffer.Length != 2)
+        {
             reprojectionBuffer = new RenderTexture[2];
+        }
 
         int bufferW = source.width;
         int bufferH = source.height;
