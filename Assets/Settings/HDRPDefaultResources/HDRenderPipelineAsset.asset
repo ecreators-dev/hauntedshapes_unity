@@ -30,9 +30,9 @@ MonoBehaviour:
         m_Id: With3Levels
     supportVolumetrics: 1
     supportVolumetricClouds: 1
-    supportLightLayers: 1
+    supportLightLayers: 0
     renderingLayerMaskBuffer: 1
-    supportWater: 0
+    supportWater: 1
     waterSimulationResolution: 128
     supportWaterExclusion: 1
     supportWaterHorizontalDeformation: 0
@@ -80,12 +80,12 @@ MonoBehaviour:
     lightProbeSystem: 1
     oldLightProbeSystem: 0
     probeVolumeMemoryBudget: 1024
-    supportProbeVolumeGPUStreaming: 1
-    supportProbeVolumeDiskStreaming: 1
+    supportProbeVolumeGPUStreaming: 0
+    supportProbeVolumeDiskStreaming: 0
     probeVolumeSHBands: 1
-    supportProbeVolumeScenarios: 0
+    supportProbeVolumeScenarios: 1
     supportProbeVolumeScenarioBlending: 1
-    probeVolumeBlendingMemoryBudget: 128
+    probeVolumeBlendingMemoryBudget: 256
     supportRayTracing: 1
     supportVFXRayTracing: 1
     supportedRayTracingMode: 1
@@ -115,11 +115,11 @@ MonoBehaviour:
       maxCubeReflectionOnScreen: 32
       maxPlanarReflectionOnScreen: 8
       maxDecalsOnScreen: 512
-      maxLightsPerClusterCell: 8
+      maxLightsPerClusterCell: 6
       maxLocalVolumetricFogSize: 0
       maxLocalVolumetricFogOnScreen: 256
     hdShadowInitParams:
-      maxShadowRequests: 128
+      maxShadowRequests: 512
       directionalShadowsDepthBits: 32
       punctualShadowFilteringQuality: 1
       directionalShadowFilteringQuality: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
       maxDirectionalShadowMapResolution: 2048
       maxPunctualShadowMapResolution: 2048
       maxAreaShadowMapResolution: 2048
-      supportScreenSpaceShadows: 0
+      supportScreenSpaceShadows: 1
       maxScreenSpaceShadowSlots: 4
       screenSpaceShadowBufferFormat: 48
     decalSettings:
@@ -360,7 +360,11 @@ MonoBehaviour:
   m_UseRenderGraph: 1
   m_CompositorCustomVolumeComponentsList:
     m_InjectionPoint: 1
-    m_CustomPostProcessTypesAsString: []
+    m_CustomPostProcessTypesAsString:
+    - UnityEngine.Rendering.HighDefinition.Compositor.ChromaKeying, Unity.RenderPipelines.HighDefinition.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    - UnityEngine.Rendering.HighDefinition.Compositor.AlphaInjection, Unity.RenderPipelines.HighDefinition.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Version: 26
   m_ObsoleteFrameSettings:
     overrides: 0
