@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Allows specified orientation axis. <br/>
@@ -12,9 +13,14 @@ public class CameraFacing : MonoBehaviour
     {
         cameraToLookAt = FindFirstObjectByType<Camera>();
     }
-    
+
     private void Update()
     {
+        if (cameraToLookAt == null)
+        {
+            Awake();
+            return;
+        }
         Vector3 v = cameraToLookAt.transform.position - transform.position;
         v.x = v.z = 0.0f;
         transform.LookAt(cameraToLookAt.transform.position - v);

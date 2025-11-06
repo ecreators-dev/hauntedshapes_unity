@@ -360,11 +360,7 @@ MonoBehaviour:
   m_UseRenderGraph: 1
   m_CompositorCustomVolumeComponentsList:
     m_InjectionPoint: 1
-    m_CustomPostProcessTypesAsString:
-    - UnityEngine.Rendering.HighDefinition.Compositor.ChromaKeying, Unity.RenderPipelines.HighDefinition.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    - UnityEngine.Rendering.HighDefinition.Compositor.AlphaInjection, Unity.RenderPipelines.HighDefinition.Runtime,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_CustomPostProcessTypesAsString: []
   m_Version: 26
   m_ObsoleteFrameSettings:
     overrides: 0
@@ -558,5 +554,5 @@ MonoBehaviour:
   m_ObsoleteShaderVariantLogLevel: 0
   m_ObsoleteLensAttenuation: 0
   m_ObsoleteDiffusionProfileSettingsList: []
-  m_PrefilterUseLegacyLightmaps: 0
+  m_PrefilterUseLegacyLightmaps: 1
   m_PrefilterUseLightmapBicubicSampling: 0

@@ -25,6 +25,7 @@ namespace Game
         /// Crosshair Fokus, prüft ob ein Bestimmter Spieler im Fokusbereich ist (TriggerZone)
         /// </summary>
         (bool inRange, bool hasRange) IsPlayerInRange(IInteractiveObject sender, int playerId);
+        void PlayGame();
 
         /// <summary>
         /// Trägt ein Item im Visier ins Inventar ein

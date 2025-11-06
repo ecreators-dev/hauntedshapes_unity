@@ -762,141 +762,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 522384658}
   m_LocalEulerAnglesHint: {x: 18.9, y: 69.2, z: 0}
---- !u!1 &138395003
-GameObject:
+--- !u!84 &206715474
+RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 138395005}
-  - component: {fileID: 138395004}
-  m_Layer: 0
-  m_Name: Global Control
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &138395004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138395003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 504b8163e405ec24bab88beccbe43d42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Boxophobic.TheVegetationEngine.Runtime::TheVegetationEngine.TVEGlobalControl
-  styledBanner: 0
-  lightCat: 0
-  mainLight: {fileID: 2014260575}
-  seasonCat: 0
-  seasonControl: 2
-  defaultCat: 0
-  styledMessage: 1
-  globalColor:
-    r: 0.5
-    g: 0.5
-    b: 0.5
-    a: 0
-  globalAlpha: 1
-  globalOverlay: 0
-  globalWetness: 0
-  globalEmissive: 1
-  globalSubsurface: 1
-  globalSizeFade: 1
-  overlayCat: 0
-  overlayColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  overlaySmoothness: 0.5
-  overlayMessage: 1
-  overlayAlbedo: {fileID: 0}
-  overlayNormal: {fileID: 0}
-  overlayTilling: 1
-  overlayNormalScale: 1
-  noiseCat: 0
-  worldNoiseTexture: {fileID: 0}
-  screenNoiseTexture: {fileID: 0}
-  screenNoiseScale: 5
-  fadeCat: 0
-  sizeFadeDistanceBias: 1
-  cameraFadeDistance: 1
-  styledSpace0: 0
---- !u!4 &138395005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138395003}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 231086288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &231086286
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
   serializedVersion: 6
-  m_Component:
-  - component: {fileID: 231086288}
-  - component: {fileID: 231086287}
-  m_Layer: 0
-  m_Name: The Vegetation Engine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &231086287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231086286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d813856876a4ac94682b202e4240ce4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Boxophobic.TheVegetationEngine.Runtime::TheVegetationEngine.TVEManager
-  styledBanner: 0
-  globalMotion: {fileID: 483469401}
-  globalDetails: {fileID: 1836796723}
-  globalControl: {fileID: 138395004}
-  globalVolume: {fileID: 1886401905}
---- !u!4 &231086288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231086286}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 483469404}
-  - {fileID: 1836796724}
-  - {fileID: 138395005}
-  - {fileID: 1886401906}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Width: 859
+  m_Height: 479
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 48
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &474381210
 GameObject:
   m_ObjectHideFlags: 1
@@ -946,123 +848,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &483469400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 483469404}
-  - component: {fileID: 483469403}
-  - component: {fileID: 483469402}
-  - component: {fileID: 483469401}
-  m_Layer: 0
-  m_Name: Global Motion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &483469401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483469400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c879218671cebf84d9385947d79161cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Boxophobic.TheVegetationEngine.Runtime::TheVegetationEngine.TVEGlobalMotion
-  styledBanner: 0
-  goCat: 0
-  mainDirection: {fileID: 483469400}
-  windCat: 0
-  windPower: 0.5
-  motionCat: 0
-  styledMessage: 1
-  noiseScale: 1
-  noiseSpeed: 1
-  flutterPower: 1
-  flutterSpeed: 1
-  fadeCat: 0
-  motionFadeDistance: 100
-  isEnabled: 1
---- !u!23 &483469402
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483469400}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: b3f9938062719a844bb639f7a27993f3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &483469403
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483469400}
-  m_Mesh: {fileID: 4300002, guid: 63ed98e640ad20243af2d4faedcaadad, type: 3}
---- !u!4 &483469404
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483469400}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 231086288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522384657
 GameObject:
@@ -1434,6 +1219,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &722939277
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs/DefaultCompositionGraph 1
+  m_Shader: {fileID: -6465566751694194690, guid: 7a54d53bd8447ec4f8005b03fd886564, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - BaseLayer:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &749431668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,43 +1898,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1141287717
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 852
-  m_Height: 479
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 48
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1193941546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,50 +2209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9315b98aa4b807f40a7ca8cd833bcb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayNightTimeController
---- !u!21 &1733634381
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs/DefaultCompositionGraph 1
-  m_Shader: {fileID: -6465566751694194690, guid: 7a54d53bd8447ec4f8005b03fd886564, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - BaseLayer:
-        m_Texture: {fileID: 1141287717}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!4 &1773502555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2902329524064318478, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
@@ -2496,7 +2244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.Compositor.CompositionManager
   m_Enable: 0
-  m_Material: {fileID: 1733634381}
+  m_Material: {fileID: 722939277}
   m_OutputDisplay: 0
   m_InputLayers:
   - m_LayerName: Sub Layer
@@ -2561,7 +2309,7 @@ MonoBehaviour:
     m_InputFilters: []
     m_AOVBitmask: 0
     m_AOVRenderTargets: []
-    m_RenderTarget: {fileID: 1141287717}
+    m_RenderTarget: {fileID: 206715474}
     m_ClearsBackGround: 1
     m_Show: 1
     m_LayerCamera: {fileID: 0}
@@ -2660,182 +2408,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1836796722
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1836796724}
-  - component: {fileID: 1836796723}
-  m_Layer: 0
-  m_Name: Global Details
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1836796723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836796722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3cf74665658f2249a2a56df92106e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Boxophobic.TheVegetationEngine.Runtime::TheVegetationEngine.TVEGlobalDetails
-  styledBanner: 0
-  styledMessage: 1
-  globalCat: 0
-  layerColors: 0
-  layerExtras: 0
-  layerMotion: 0
-  globalColor: 1
-  globalAlpha: 1
-  globalOverlay: 1
-  globalWetness: 1
-  colorMaskMin: 0.4
-  colorMaskMax: 0.6
-  overlayMaskMin: 0.4
-  overlayMaskMax: 0.6
-  alphaTreshold: 0.5
-  perspectiveCat: 0
-  perspectivePush: 0
-  perspectiveNoise: 0
-  perspectiveAngle: 1
-  motionCat: 0
-  motionHighlight:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  bendingAmplitude: 1
-  bendingSpeed: 6
-  bendingScale: 2
-  flutterAmplitude: 0.1
-  flutterSpeed: 20
-  flutterScale: 10
-  interactionAmplitude: 1
-  styledSpace0: 0
---- !u!4 &1836796724
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836796722}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 231086288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1886401904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1886401906}
-  - component: {fileID: 1886401905}
-  m_Layer: 0
-  m_Name: Global Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1886401905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886401904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf239e2056652741929c4183efd08b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Boxophobic.TheVegetationEngine.Runtime::TheVegetationEngine.TVEGlobalVolume
-  styledBanner: 0
-  cameraCat: 0
-  styledCameraMessaage: 0
-  mainCamera: {fileID: 5565380195941087268}
-  elementsCat: 0
-  styledSortingMessaage: 0
-  elementsVisibility: 20
-  elementsVisibilityOld: 20
-  elementsSorting: 0
-  elementsEdgeFade: 0.75
-  dataCat: 0
-  renderColors: 1024
-  renderExtras: 1024
-  renderMotion: 1024
-  renderVertex: 1024
-  useHighPrecisionRendering: 1
-  useFollowMainCamera: 0
-  followMainCameraVolume: {x: 100, y: 100, z: 100}
-  followMainCameraOffset: 1
-  usesFollowActive: 1
-  styledSpace0: 0
-  projectionMatrix:
-    e00: 0
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 0
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 0
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 0
-  modelViewMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 0
-    e12: -1
-    e13: 0
-    e20: 0
-    e21: -1
-    e22: 0
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
---- !u!4 &1886401906
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886401904}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 400, y: 200, z: 400}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 231086288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913503556
 GameObject:
@@ -3625,9 +3197,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762203804673733683, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 859071211317533128, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_Name
       value: Spieler
+      objectReference: {fileID: 0}
+    - target: {fileID: 859071211317533128, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022100558476565196, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
+      propertyPath: entries.Array.size
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3643,7 +3227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8865672
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3651,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.46259987
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3663,7 +3247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -55.11
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3058690797741145726, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3672,6 +3256,14 @@ PrefabInstance:
     - target: {fileID: 3694573196762311511, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: tempoSeconds
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007318122875380731, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
+      propertyPath: antialiasing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007318122875380731, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
+      propertyPath: clearColorMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5875679753066962305, guid: 7fc6da7c6a5a72247b206e7e35bebd62, type: 3}
       propertyPath: m_UIInputModule
@@ -3703,4 +3295,3 @@ SceneRoots:
   - {fileID: 658858840}
   - {fileID: 1808745509}
   - {fileID: 474381212}
-  - {fileID: 231086288}

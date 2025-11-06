@@ -76,8 +76,15 @@ namespace Game.Interaction
 
         private void Start()
         {
-            audioPlayer.SetMute(true);
-            ShowDoorState();
+            StartCoroutine(DelayedStart(1f));
+
+            IEnumerator DelayedStart(float seconds)
+            {
+                yield return new WaitForSeconds(seconds);
+                audioPlayer.SetMute(true);
+                ShowDoorState();
+                yield return null;
+            }
         }
 
         public void Unlock(GameActorBehaviour sender)

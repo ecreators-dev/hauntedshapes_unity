@@ -54,6 +54,12 @@ namespace Game
 #endif
         }
 
+        public void PlayGame()
+        {
+            PlayerBehaviour player = FindFirstObjectByType<PlayerBehaviour>(FindObjectsInactive.Include);
+            player.gameObject.SetActive(true);
+        }
+
         /// <summary>
         /// Verwaltet die Aufnahme eines Gegenstands in das Spieler-Inventars
         /// </summary>

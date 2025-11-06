@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 5875679753066962305}
   - component: {fileID: 3022100558476565196}
   - component: {fileID: 5034782712687525400}
+  - component: {fileID: 8944632695232122471}
   m_Layer: 0
   m_Name: Spieler
   m_TagString: Player
@@ -471,6 +472,48 @@ MonoBehaviour:
     <Count>k__BackingField: 0
   - <Asset>k__BackingField: {fileID: 0}
     <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
+  - <Asset>k__BackingField: {fileID: 0}
+    <Count>k__BackingField: 0
   size: 7
 --- !u!54 &5034782712687525400
 Rigidbody:
@@ -499,6 +542,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 1
+--- !u!114 &8944632695232122471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859071211317533128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8100218b51185dd42a3a3ed2c4e2466f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.PlayerBehaviour
+  isGhost: 0
+  inventory: {fileID: 3022100558476565196}
 --- !u!1 &2516241967063316746
 GameObject:
   m_ObjectHideFlags: 0
